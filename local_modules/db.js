@@ -1,5 +1,0 @@
-var config = require('../config');
-var mongoose = require('mongoose');
-mongoose.connect(config.db.connString);
-
-module.exports = mongoose;
