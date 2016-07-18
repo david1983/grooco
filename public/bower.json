@@ -1,0 +1,22 @@
+{
+  "name": "public",
+  "homepage": "https://github.com/david1983/grooco",
+  "authors": [
+    "david1983 <davideandreazzini@live.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "^0.3.1",
+    "font-awesome": "^4.6.3"
+  }
+}
