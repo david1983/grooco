@@ -1,4 +1,18 @@
 @import "bourbon";
 @import "neat";
 @import "reset";
-@import "components/navbar"
+
+@import "components/navbar";
+@import "components/hero";
+@import "components/grid";
+@import "components/footer";
+
+
+#content{
+    @include outer-container;    
+}
+
+
+.subHeader{
+    padding:2em 0
+}
