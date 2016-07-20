@@ -28,6 +28,8 @@
 
   @include clearfix;
 
+ 
+
   .grid-item {
     background: $grid-item-background;
     border-bottom: $grid-item-border-size solid $grid-items-background;
@@ -49,10 +51,11 @@
       @include grid-item-columns($grid-item-columns);
     }
 
-    @for $i from 1 through length($grid-item-colors) { // assign colors from $grid-item-colors list
-      &:nth-child(#{$i}) {
-        $background-from-list: nth($grid-item-colors, $i);
+@for $i from 1 through 20 {
+    &:nth-child(#{length($grid-item-colors)}n+#{$i}) {
+        $background-from-list: nth($grid-item-colors, random(length($grid-item-colors)));
         background-color: $background-from-list;
+
         box-shadow: inset 0 0 1px 2px darken($background-from-list, 10%);
 
         &:focus,

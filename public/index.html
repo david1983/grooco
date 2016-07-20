@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="grooco">
+
 <head>
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
@@ -9,14 +10,36 @@
 </head>
 
 <body>
+
+
     <div ui-view="navbar"></div>
     <div ui-view="content" id="content"></div>
     <div ui-view="footer"></div>
 
+
+
+    <script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
+    
+    <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAG1u29W1E_Y3ZXr2ynUyC3dhee3NlbI_M",
+    authDomain: "grooco-3a6e4.firebaseapp.com",
+    databaseURL: "https://grooco-3a6e4.firebaseio.com",
+    storageBucket: "grooco-3a6e4.appspot.com",
+  };
+  firebase.initializeApp(config);
+</script>
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="/bower_components/angular/angular.min.js"></script>
     <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <script src="/js/app.js"></script>
+    <script src="/js/app.js"></script>  
+    <script src="/js/controllers/home.js"></script>
+    <script src="/js/controllers/list.js"></script>    
+    <script src="/js/controllers/product.js"></script>
+    <!--<script src="/js/services/products.js"></script>-->
+    <script src="/js/services/categories.js"></script>
     <script src="/js/components/navbar.js"></script>
 </body>
+
 </html>

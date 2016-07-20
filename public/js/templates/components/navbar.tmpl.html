@@ -8,20 +8,14 @@
       <ul id="js-navigation-menu" class="navigation-menu show">
         <li id="js-navigation-more" class="nav-link more"><a href="javascript:void(0)">Categories</a>
           <ul class="submenu">
-            <li><a href="javascript:void(0)">Submenu Item</a></li>
-            <li><a href="javascript:void(0)">Another Item</a></li>
-            <li class="more"><a href="javascript:void(0)">Item with submenu</a>
-              <ul class="submenu">
-                <li><a href="javascript:void(0)">Sub-submenu Item</a></li>
-                <li><a href="javascript:void(0)">Another Item</a></li>
+            <li  class="more" ng-repeat="(k,v) in categories" ng-if="$index<50">
+              <a href="javascript:void(0)">{{k | removeUnderscore }}</a>
+               <ul class="submenu" >
+                <li  ng-repeat="i in v ">
+                  <a href="javascript:void(0)"> {{i| removeUnderscore}}</a>
+                </li>                
               </ul>
-            </li>
-            <li class="more"><a href="javascript:void(0)">Another submenu</a>
-              <ul class="submenu">
-                <li><a href="javascript:void(0)">Sub-submenu</a></li>
-                <li><a href="javascript:void(0)">An Item</a></li>
-              </ul>
-            </li>
+              </li>
           </ul>
         </li>
         <li class="nav-link"><a href="javascript:void(0)">Products</a></li>

@@ -1,7 +1,10 @@
 app.component("navBar", {
     templateUrl: '/js/templates/components/navbar.tmpl.html',
-    controller: function () {
-        
+    controller: function ($scope,categories) {
+         categories
+        .then(function(res){
+              $scope.$apply(function(){$scope.categories = res.val()})
+          }) 
         $(window).on("resize", handleMenu);
         $(document).ready(handleMenu)
 

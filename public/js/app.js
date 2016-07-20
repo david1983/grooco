@@ -24,7 +24,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: "/",
             views: Object.assign(defaultRoute, {
                 content: {
-                    templateUrl: "/js/templates/home.tmpl.html"
+                    templateUrl: "/js/templates/home.tmpl.html",
+                    controller: 'homeCtrl as vm'
                 }
             })
         })
