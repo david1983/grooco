@@ -1,0 +1,26 @@
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+.hero {
+  align-items: center;
+  background: url("http://psmu-01.atmocdn.com/wp-content/uploads/sites/1324/2015/06/shutterstock_260778521.jpg");
+  background-position: 56% 3% !important;
+  background-size: cover !important;
+  display: flex;
+  justify-content: center;
+  min-height: 25em;
+  padding: 2em; }
+  @media screen and (min-width: 50em) {
+    .hero {
+      background-position: left;
+      background-size: cover;
+      justify-content: flex-end; } }
+  .hero .hero-content {
+    max-width: 20em;
+    text-align: center; }
+  .hero .hero-logo {
+    display: block;
+    margin: auto; }

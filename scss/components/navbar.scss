@@ -1,3 +1,6 @@
+@import "bourbon";
+@import "neat";
+
 header.navigation {
   $base-border-color: gainsboro !default;
   $base-border-radius: 3px !default;
@@ -256,7 +259,6 @@ header.navigation {
         display: inline-block;
         text-align: right;
         width: 100%;
-
         @include media($horizontal-bar-mode) {
           background-color: $navigation-background;
           padding-left: $navigation-submenu-padding;

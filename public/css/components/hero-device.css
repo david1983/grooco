@@ -1,0 +1,53 @@
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+.device-background {
+  background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png"), linear-gradient(10deg, #0A120D, #162C4C), no-repeat #162C4C scroll;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 20em;
+  width: 100%; }
+  .device-background .device-text {
+    padding: 2em; }
+    @media screen and (min-width: 53.75em) {
+      .device-background .device-text {
+        float: left;
+        max-width: 50%;
+        padding: 4em; } }
+    .device-background .device-text h4 {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      font-size: 1.5em;
+      margin: 0 0 0.5em 0;
+      padding-bottom: 0.5em; }
+    .device-background .device-text p {
+      color: white;
+      line-height: 1.5em;
+      margin-bottom: 1.5em; }
+  .device-background .device {
+    display: none;
+    position: relative; }
+    @media screen and (min-width: 53.75em) {
+      .device-background .device {
+        background: #1a1a1a;
+        border-radius: 2em;
+        box-shadow: 1px 0 #343434, 4px 0 #060606, 7px 0 #010101, 10px 0 #010101, 13px 0 #010101;
+        display: block;
+        float: right;
+        margin-bottom: -12em;
+        margin-right: 5em;
+        padding: 5em 0;
+        transform: perspective(800px) translateX(0) translateY(-100px) translateZ(50px) rotateX(0) rotateY(-20deg) rotateZ(0);
+        width: 14.8em;
+        z-index: 99999; }
+        .device-background .device .screen {
+          height: 25em;
+          width: 14em;
+          background-image: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/cosmin_capitanu_screen.jpg");
+          background-size: cover;
+          border-radius: 0.2em;
+          box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.5);
+          margin: auto; } }
