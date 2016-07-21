@@ -1,5 +1,6 @@
 @import "bourbon";
 @import "neat";
+@import "../vars";
 
 @mixin grid-item-columns($columns) {
   width: (100% / 12) * $columns;
@@ -8,8 +9,9 @@
 .grid-items {
   $action-color: #477DCA !default;
   $base-background-color: white !default;
-  $medium-screen: 40em !default;
-  $large-screen: 53.75em !default;
+  $medium-screen: 425px !default;
+  $tablet-screen: 768px !default;
+  $large-screen: 860px !default;
   $grid-items-background: $base-background-color;
   $grid-item-background: desaturate($action-color, 30%);
   $grid-item-colors:
@@ -21,11 +23,13 @@
     #BDCC97,
     #979EA0;
   $grid-item-border-size: 9px;
-  $grid-item-columns: 4;
-  $grid-item-big-columns: 8;
+
   $grid-item-color: white;
   $grid-item-height: 14em;
 
+  $grid-item-columns: 3;
+  $grid-item-big-columns: 6;
+  
   @include clearfix;
 
  
@@ -44,12 +48,19 @@
     padding: 2em;
     text-align: center;
     text-decoration: none;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.4s ease-in-out;
     width: 100%;
 
-    @include media($large-screen) {
+
+
+     @include media($tablet-screen) {
+      @include grid-item-columns(4);
+    }
+    
+        @include media($large-screen) {
       @include grid-item-columns($grid-item-columns);
     }
+
 
 @for $i from 1 through 20 {
     &:nth-child(#{length($grid-item-colors)}n+#{$i}) {
@@ -92,7 +103,12 @@
   }
 
   .grid-item-big {
-    @include media($large-screen) {
+   
+
+     @include media($tablet-screen) {
+      @include grid-item-columns(8);
+    }
+     @include media($large-screen) {
       @include grid-item-columns($grid-item-big-columns);
     }
 
@@ -110,4 +126,39 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
+}
+
+
+
+.fade-in-element {
+  $base-border-color: gainsboro !default;
+  $base-border-radius: 3px !default;
+  $base-background-color: white !default;
+  $base-line-height: 1.5em !default;
+  $base-spacing: 1.5em !default;
+  $dark-gray: #333 !default;
+  $base-font-color: $dark-gray !default;
+
+  @include clearfix;
+  background: $base-background-color;
+  border: 1px solid silver;
+  border-radius: $base-border-radius;
+  box-shadow: 0 2px 2px transparentize(black, 0.8);
+  line-height: $base-line-height;  
+  padding: $base-spacing;
+  text-align: center;
+  width: 100%;
+
+  p {
+    color: $base-font-color;
+    line-height: $base-line-height;
+  }
+}
+
+.js-fade-element-hide {
+  opacity: 0;
+}
+
+.js-fade-element-show {
+  opacity: 1;  
 }

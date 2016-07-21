@@ -43,9 +43,11 @@ header.navigation {
   header.navigation nav {
     float: none;
     min-height: 60px;
-    z-index: 9999999; }
+    z-index: 9999999;
+    display: none; }
     @media screen and (min-width: 53.75em) {
       header.navigation nav {
+        display: block;
         float: left; } }
   header.navigation ul.navigation-menu {
     clear: both;

@@ -1,6 +1,7 @@
 @import "bourbon";
 @import "neat";
 
+
 header.navigation {
   $base-border-color: gainsboro !default;
   $base-border-radius: 3px !default;
@@ -74,8 +75,9 @@ header.navigation {
     float: none;
     min-height: $navigation-height;
     z-index: 9999999;
-
+    display:none;
     @include media ($horizontal-bar-mode) {
+      display:block;
       float: left;
     }
   }

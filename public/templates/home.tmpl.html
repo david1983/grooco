@@ -7,16 +7,17 @@
   </div>
 </div>
 
-<div class="subHeader">
-    <h2>Categories</h2>
+
+<div class="grid-items" ng-if="categories">
+  <div class="subHeader">
+    <h2>Top Categories</h2>
 </div>
-<div class="grid-items">
-  <a href="javascript:void(0)" class="grid-item" ng-if="$index>2 && $index< 10"
-   ng-class="{'grid-item-big': $index%9==0}" ng-repeat="(k, v) in categories">
+  <a href="javascript:void(0)" class="grid-item fade-in-element" 
+   ng-class="{'grid-item-big': vm.grid[$index]==2}" ng-repeat="(k, v) in categories" ng-if="$index<vm.max">
     <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_square.png" alt="">
     <h1>{{k | removeUnderscore}}</h1>
     <p>
-      <span ng-repeat="i in v " ng-if="$index<2"> {{i| removeUnderscore}}</span>
+      <span ng-repeat="(sk,sv) in v " ng-if="$index<2"> {{sk| removeUnderscore}}</span>
     </p>
   </a>
 </div>

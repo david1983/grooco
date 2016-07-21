@@ -1,30 +1,27 @@
-var app = angular.module('grooco', ['ui.router']);
-
-
 var defaultRoute = {
-    navbar: { templateUrl: "/js/templates/header.tmpl.html" },
+    navbar: { templateUrl: "/templates/header.tmpl.html" },
     content: {
-        templateUrl: "/js/templates/home.tmpl.html"
+        templateUrl: "/templates/home.tmpl.html"
     },
-    footer: { templateUrl: "/js/templates/footer.tmpl.html" },
+    footer: { templateUrl: "/templates/footer.tmpl.html" },
 }
 
+
+var app = angular.module('grooco', ['ui.router']);
 app.config(function ($stateProvider, $urlRouterProvider) {
-    //
-    // For any unmatched url, redirect to /state1
+
     $urlRouterProvider.otherwise("/404");
-    //
-    // Now set up the states
+
     $stateProvider
         .state('notfound', {
             url: "/404",
-            templateUrl: "/js/templates/404.tmpl.html",
+            templateUrl: "/templates/404.tmpl.html",
         })
         .state('home', {
             url: "/",
             views: Object.assign(defaultRoute, {
                 content: {
-                    templateUrl: "/js/templates/home.tmpl.html",
+                    templateUrl: "/templates/home.tmpl.html",
                     controller: 'homeCtrl as vm'
                 }
             })
@@ -33,7 +30,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: "/list",
             views: Object.assign(defaultRoute, {
                 content: {
-                    templateUrl: "/js/templates/list.tmpl.html"
+                    templateUrl: "/templates/list.tmpl.html"
                 }
             })
         })
@@ -41,7 +38,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: "/product",
             views: Object.assign(defaultRoute, {
                 content: {
-                    templateUrl: "/js/templates/product.tmpl.html"
+                    templateUrl: "/templates/product.tmpl.html"
                 }
             }),
             controller: function ($scope) {
@@ -52,11 +49,54 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: "/category",
             views: Object.assign(defaultRoute, {
                 content: {
-                    templateUrl: "/js/templates/category.tmpl.html"
+                    templateUrl: "/templates/category.tmpl.html"
                 }
             }),
             controller: function ($scope) {
                 $scope.things = ["A", "Set", "Of", "Things"];
             }
         });
+}).run(function ($rootScope, firebaseObj, $timeout) {
+
+    firebaseObj.list('categories').then(function (res) {
+        $rootScope.$apply(function () {
+            $rootScope.categories = res.val();
+            $timeout(function () {
+                fadeInElems()
+            }, 200)
+        });
+    });
+
 });
+
+function fadeInElems() {
+    var elements = document.querySelectorAll(".fade-in-element");    
+    elements.forEach(function (element) {        
+        $(element).addClass('js-fade-element-hide');
+    }, this);
+
+    handleFade();
+    $(window).scroll(handleFade);
+}
+
+function handleFade() {
+    if ($(".fade-in-element").length > 0) {
+        var elements = document.querySelectorAll(".fade-in-element");        
+        elements.forEach(function (element) {
+            var elementTopToPageTop = $(element).offset().top;
+            var windowTopToPageTop = $(window).scrollTop();
+            var windowInnerHeight = window.innerHeight;
+            var elementTopToWindowTop = elementTopToPageTop - windowTopToPageTop;
+            var elementTopToWindowBottom = windowInnerHeight - elementTopToWindowTop;
+            var distanceFromBottomToAppear = 20;
+
+            if (elementTopToWindowBottom > distanceFromBottomToAppear) {
+                $(element).addClass('js-fade-element-show');
+            }
+            else if (elementTopToWindowBottom < 0) {
+                $(element).removeClass('js-fade-element-show');
+                $(element).addClass('js-fade-element-hide');
+            }
+        })
+    }
+}
