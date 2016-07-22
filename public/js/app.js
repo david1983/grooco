@@ -8,9 +8,11 @@ var defaultRoute = {
 
 
 var app = angular.module('grooco', ['ui.router']);
-app.config(function ($stateProvider, $urlRouterProvider) {
-
-    $urlRouterProvider.otherwise("/404");
+app.config(function ($stateProvider,  $urlRouterProvider) {
+  //
+  // For any unmatched url, redirect to /state1
+  $urlRouterProvider.otherwise("/");
+    
 
     $stateProvider
         .state('notfound', {
@@ -26,11 +28,11 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 }
             })
         })
-        .state('list', {
-            url: "/list",
+        .state('products', {
+            url: "/products",
             views: Object.assign(defaultRoute, {
                 content: {
-                    templateUrl: "/templates/list.tmpl.html"
+                    templateUrl: "/templates/products.tmpl.html"
                 }
             })
         })
@@ -40,21 +42,15 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 content: {
                     templateUrl: "/templates/product.tmpl.html"
                 }
-            }),
-            controller: function ($scope) {
-                $scope.things = ["A", "Set", "Of", "Things"];
-            }
+            })
         })
-        .state('category', {
-            url: "/category",
+        .state('categories', {
+            url: "/categories",
             views: Object.assign(defaultRoute, {
                 content: {
                     templateUrl: "/templates/category.tmpl.html"
                 }
-            }),
-            controller: function ($scope) {
-                $scope.things = ["A", "Set", "Of", "Things"];
-            }
+            })
         });
 }).run(function ($rootScope, firebaseObj, $timeout) {
 
