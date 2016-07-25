@@ -36,14 +36,16 @@ header.navigation {
   }
 
   .logo {
+    height: $navigation-height;
+    width:100px;
     float: left;
     max-height: $navigation-height;
     padding-left: $navigation-padding;
     padding-right: 2em;
 
-    img {
+    logo-svg {
       max-height: $navigation-height;
-      padding: 0.8em 0;
+      padding: 0.4em 0;
     }
   }
 

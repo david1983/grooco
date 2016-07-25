@@ -1,0 +1,17 @@
+
+<spinner-css  ng-if="!$ctrl.categories.categories"/>
+<div class="grid-items" ng-if="$ctrl.categories.categories">  
+
+  <a fade-in-element ui-sref="category({name: k})" class="grid-item fade-in-element"
+  back-img = '{{$ctrl.categories.imgs[k][0]}}'  
+   ng-class="{'grid-item-big': $ctrl.grid[$index]==2}" ng-repeat="(k, v) in $ctrl.categories.categories" ng-if="$index<$ctrl.max">   
+         <div class="grad"></div>
+         
+    <!--<img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_square.png" alt="category logo">-->
+    <h1>{{k | removeUnderscore}}</h1>
+    <!--<p>
+      <span ng-repeat="(sk,sv) in v " ng-if="$index<2"> {{sk| removeUnderscore}}</span>
+    </p>-->
+
+  </a>
+</div>

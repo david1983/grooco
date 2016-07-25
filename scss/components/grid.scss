@@ -9,8 +9,8 @@
 .grid-items {
   $action-color: #477DCA !default;
   $base-background-color: white !default;
-  $medium-screen: 425px !default;
-  $tablet-screen: 768px !default;
+  $medium-screen: 300px !default;
+  $tablet-screen: 426px !default;
   $large-screen: 860px !default;
   $grid-items-background: $base-background-color;
   $grid-item-background: desaturate($action-color, 30%);
@@ -35,6 +35,7 @@
  
 
   .grid-item {
+    position:relative;
     background: $grid-item-background;
     border-bottom: $grid-item-border-size solid $grid-items-background;
     border-left: ($grid-item-border-size / 2) solid $grid-items-background;
@@ -48,9 +49,26 @@
     padding: 2em;
     text-align: center;
     text-decoration: none;
-    transition: all 0.4s ease-in-out;
+    transition: opacity 0.4s ease-in-out;
     width: 100%;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
 
+    .grad{
+content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.5), rgba(255,255,255,0));
+		// opacity: .3;
+    transition:0.5s all
+    }
+    
+     
+  
 
 
      @include media($tablet-screen) {
@@ -72,13 +90,31 @@
         &:focus,
         &:hover {
           background-color: darken($background-from-list, 10%);
-          background-position: top;
-          background-repeat: no-repeat;
-          background-size: cover;
+          & .grad{
+            opacity:0;
+          }    
+
+          & h1{
+            bottom: 30%;
+          }      
         }
+
       }
     }
   }
+
+  h1{
+    width:100%;
+    text-align:center;
+    position:absolute;
+    bottom:5%;
+    left:50%;
+    transform: translateX(-50%);
+    text-shadow: 1px 1px 1px black;
+    transition: all 0.3s ease-out;
+  }
+
+
 
   .grid-item img {
     display: block;

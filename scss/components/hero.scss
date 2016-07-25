@@ -1,35 +1,76 @@
 @import "bourbon";
 @import "neat";
 
-.hero {
-  $large-screen: 50em !default;
-  align-items: center;
-  background: url("http://psmu-01.atmocdn.com/wp-content/uploads/sites/1324/2015/06/shutterstock_260778521.jpg");
-  background-position: 56% 3%!important;
-  background-size: cover!important;
+.hero {  
+  overflow:hidden;
+  $large-screen: 50em !default;  
+  align-items: center; 
   display: flex;
   justify-content: center;
   min-height: 25em;
   padding: 2em;
-
-  @include media($large-screen) {
-    background-position: left;
-    background-size: cover;
+position: relative;
+  @include media($large-screen) {        
     justify-content: flex-end;
   }
+  #bg {
+  position: absolute; 
+  top: 0; 
+  left: 0;
+  height:100%;
+  
+  min-height:100%;
+  min-width:100%;
+  
+  z-index:0;
+  @include media(565px) {
+    height:auto;
+    width:100%;
+  }
+}
 
   .hero-content {
-    
+    z-index:2;    
+    width:80%;
     max-width: 20em;
     text-align: center;
-
-    // @include media($large-screen) {
-    //   text-align: left;
-    // }
+    h1 {
+      text-align:center;
+      font-weight:bold;font-family: 'Asap', sans-serif;
+      color:white;
+      font-size:4em;
+    }
+    @include media($large-screen) {
+       width:30%;
+      text-align: left;
+    }
   }
 
   .hero-logo {
     display:block;
     margin: auto;
+    width:20%;
+     @include media($large-screen) {
+       width:100%;
+      text-align: left;
+    }
+  }
+
+
+  &.category{
+    background-position: center; 
+    display:flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    vertical-align: bottom;
+    text-align:left;
+    .subHeader{
+      padding:0 0  ;
+      width:100%;
+      font-size: 2.5em;
+      color:white;
+      font-weight:bold;
+      text-shadow: 1px 1px 1px black
+    }
   }
 }
