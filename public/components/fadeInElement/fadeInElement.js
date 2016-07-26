@@ -15,13 +15,13 @@ app.directive('fadeInElement', function ($timeout, $window) {
 });
 
 function handleFade(element) {
-
+    
     var elementTopToPageTop = $(element).offset().top;
     var windowTopToPageTop = $(window).scrollTop();
     var windowInnerHeight = window.innerHeight;
     var elementTopToWindowTop = elementTopToPageTop - windowTopToPageTop;
     var elementTopToWindowBottom = windowInnerHeight - elementTopToWindowTop;
-    var distanceFromBottomToAppear = 10;
+    var distanceFromBottomToAppear = 20;
 
     if (elementTopToWindowBottom > distanceFromBottomToAppear) {
         $(element).addClass('js-fade-element-show');

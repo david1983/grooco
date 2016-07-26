@@ -21,6 +21,9 @@ html {
     content: "";
     display: table; }
   .cat-menu .item {
+    color: rgba(255, 255, 255, 0.6);
+    display: inline-block;
+    text-decoration: none;
     background: #40526b;
     cursor: pointer;
     text-align: center;
@@ -57,10 +60,6 @@ html {
         width: 100%; }
         .cat-menu .item:last-child {
           margin-right: 0; } }
-    .cat-menu .item a {
-      color: rgba(255, 255, 255, 0.6);
-      display: inline-block;
-      text-decoration: none; }
     .cat-menu .item:hover {
       background: #3c4d65; }
       .cat-menu .item:hover a {

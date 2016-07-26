@@ -6,15 +6,27 @@
 </div>
 
 <div class="cat-menu">
-  <div class="item" ng-repeat="sc in vm.category.subCat">
-    <a ui-sref="category({name: vm.category.name, sub:$index})">{{sc.name | removeUnderscore}}</a>
-  </div>
+   <a class="item" ng-repeat="sc in vm.category.subCat" ui-sref="category({name: vm.category.name, sub:$index})">
+  
+   {{sc.name | removeUnderscore}}
+  
+  </a>
 </div>
 
 
 <div class="cards-wrapper">
   <ul class="cards">
-    <card product="p" ng-repeat="p in vm.products" />
+    <li class="cards__item" ng-repeat="product in vm.products">
+      <div fade-in-element  class="card">
+        <div class="card__image" back-img="{{product.image}}"></div>
+        <div class="card__content">
+          <div class="card__title">{{product.name}}</div>
+          <p class="card__text" ng-bind-html="product.summary"></p>
+          <button class="btn btn--block card__btn">Button</button>
+        </div>
+      </div>
+    </li>
+    
   </ul>
 </div>
 

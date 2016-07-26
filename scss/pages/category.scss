@@ -11,6 +11,9 @@
     color: transparentize($color, 0.4);
     text-align:center;
     .item{
+        color: transparentize($color, 0.4);
+        display: inline-block;
+        text-decoration: none;
         background: $background;
         cursor: pointer;
         text-align: center;        
@@ -30,11 +33,8 @@
             @include span-columns(12);                                          
         }
 
-        a{
-            color: transparentize($color, 0.4);
-            display: inline-block;
-            text-decoration: none;            
-        }
+            
+
         &:hover{
             background: darken($background, 2%);
             a{color: transparentize($color, 0);}

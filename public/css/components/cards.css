@@ -1,3 +1,8 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
 .cards-wrapper {
   color: #999999;
   font-family: 'Roboto','Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -9,10 +14,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -moz-font-feature-settings: "liga" on; }
-  .cards-wrapper *,
-  .cards-wrapper *::before,
-  .cards-wrapper *::after {
-    box-sizing: border-box; }
   .cards-wrapper img {
     height: auto;
     max-width: 100%;
@@ -29,6 +30,7 @@
   .cards-wrapper .cards {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
     list-style: none;
     margin: 0;
     padding: 0; }
@@ -42,10 +44,12 @@
       .cards-wrapper .cards__item {
         width: 33.3333%; } }
   .cards-wrapper .card {
+    transition: all 1s;
     background-color: white;
     border-radius: 0.25rem;
     box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
     display: flex;
+    width: 100%;
     flex-direction: column;
     overflow: hidden; }
     .cards-wrapper .card:hover .card__image {
@@ -58,8 +62,7 @@
   .cards-wrapper .card__image {
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: cover;
-    filter: contrast(70%);
+    background-size: 50% !important;
     position: relative;
     transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91); }
     .cards-wrapper .card__image::before {

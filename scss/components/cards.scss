@@ -6,14 +6,15 @@ $gray-lighter:              #ececec;
 $gray-lightest:             lighten($gray-lighter,4%);
 
 
-
-.cards-wrapper{
-
     *,
 *::before,
 *::after { 
   box-sizing: border-box;
 }
+
+.cards-wrapper{
+
+
   color: $gray;
   font-family: 'Roboto','Helvetica Neue', Helvetica, Arial, sans-serif;
   font-style: normal;
@@ -68,6 +69,7 @@ img {
 }
 
 .card {
+    transition:all 1s;
   background-color: white;
   border-radius: 0.25rem;
   box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
@@ -92,9 +94,7 @@ img {
 .card__image {
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: cover;
-  filter: contrast(70%);
-  //filter: saturate(180%);
+  background-size: 50%!important;    
   position: relative;
   transition: filter 0.5s cubic-bezier(.43,.41,.22,.91);;
   &::before {
