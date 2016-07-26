@@ -1,4 +1,5 @@
 app.controller('categoryCtrl', function($scope, $stateParams, categories){
+        this.params = $stateParams
      var Categories=  new categories($stateParams.name)
      console.log(Categories)
      Categories.get().then(function(result){

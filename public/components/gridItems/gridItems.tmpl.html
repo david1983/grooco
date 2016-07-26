@@ -2,7 +2,7 @@
 <spinner-css  ng-if="!$ctrl.categories.categories"/>
 <div class="grid-items" ng-if="$ctrl.categories.categories">  
 
-  <a fade-in-element ui-sref="category({name: k})" class="grid-item fade-in-element"
+  <a fade-in-element ui-sref="category({name: k, sub:0})" class="grid-item fade-in-element"
   back-img = '{{$ctrl.categories.imgs[k][0]}}'  
    ng-class="{'grid-item-big': $ctrl.grid[$index]==2}" ng-repeat="(k, v) in $ctrl.categories.categories" ng-if="$index<$ctrl.max">   
          <div class="grad"></div>

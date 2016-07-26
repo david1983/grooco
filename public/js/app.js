@@ -51,7 +51,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 }
             })
         }) .state('category', {
-            url: "/category/:name",            
+            url: "/category/:name/:sub",            
             views: Object.assign(defaultRoute, {
                 content: {
                     templateUrl: "/templates/category.tmpl.html",

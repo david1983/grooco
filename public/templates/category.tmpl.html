@@ -4,5 +4,20 @@
 <div class="subHeader">
     <h2>{{vm.category.name}}</h2>
 </div>
-<img ng-src
 </div>
+
+{{vm.category}}
+<div class="vertical-tabs-container">
+  <div class="vertical-tabs">
+    <a ui-sref="category({name: vm.params.name, sub:$index})" class="js-vertical-tab vertical-tab" ng-class="{' is-active': $index==vm.params.sub}" ng-repeat="sc in vm.category.subCat" rel="tab1">{{sc | removeUnderscore}}</a>
+  </div>
+
+  <div class="vertical-tab-content-container">
+    <a href="" class="js-vertical-tab-accordion-heading vertical-tab-accordion-heading" ng-if="$index==vm.params.sub" ng-repeat="sc in vm.category.subCat" >{{sc | removeUnderscore}}</a>
+    <div class="js-vertical-tab-content vertical-tab-content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tincidunt pellentesque lorem, id suscipit dolor rutrum id. Morbi facilisis porta volutpat. Fusce adipiscing, mauris quis congue tincidunt, sapien purus suscipit odio, quis dictum odio tortor in sem. Ut sit amet libero nec orci mattis fringilla. Praesent eu ipsum in sapien tincidunt molestie sed ut magna. Nam accumsan dui at orci rhoncus pharetra tincidunt elit ullamcorper. Sed ac mauris ipsum. Nullam imperdiet sapien id purus pretium id aliquam mi ullamcorper.</p>
+    </div>
+  </div>
+</div>
+
+

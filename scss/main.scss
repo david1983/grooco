@@ -9,12 +9,13 @@
 @import "components/footer";
 @import "components/panel";
 @import "components/spinner";
+@import "components/vtabs";
 
 #content{
     @include outer-container;    
 }
 
-
 .subHeader{
     padding:2em 0
 }
+
