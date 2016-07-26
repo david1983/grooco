@@ -1,3 +1,3 @@
-app.controller('productCtrl', function(){
+app.controller('productCtrl', function(products){
     
 })

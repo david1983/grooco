@@ -6,10 +6,22 @@
 </div>
 </div>
 
-{{vm.category}}
-<div class="vertical-tabs-container">
+
+<ul class="accordion-tabs-minimal">
+  <li class="tab-header-and-content" ng-repeat="sc in vm.category.subCat">
+    <a ui-sref="category({name: vm.params.name, sub:$index})" class="tab-link is-active">{{sc | removeUnderscore}}</a>
+    <div class="tab-content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tincidunt pellentesque lorem, id suscipit dolor rutrum id. Morbi facilisis porta volutpat. Fusce adipiscing, mauris quis congue tincidunt, sapien purus suscipit odio, quis dictum odio tortor in sem. Ut sit amet libero nec orci mattis fringilla. Praesent eu ipsum in sapien tincidunt molestie sed ut magna. Nam accumsan dui at orci rhoncus pharetra tincidunt elit ullamcorper. Sed ac mauris ipsum. Nullam imperdiet sapien id purus pretium id aliquam mi ullamcorper.</p>
+    </div>
+  </li>  
+</ul>
+
+
+<!--{{vm.category}}-->
+<!--<div class="vertical-tabs-container">
   <div class="vertical-tabs">
-    <a ui-sref="category({name: vm.params.name, sub:$index})" class="js-vertical-tab vertical-tab" ng-class="{' is-active': $index==vm.params.sub}" ng-repeat="sc in vm.category.subCat" rel="tab1">{{sc | removeUnderscore}}</a>
+    <a ui-sref="category({name: vm.params.name, sub:$index})" class="js-vertical-tab vertical-tab" 
+    ng-class="{' is-active': $index==vm.params.sub}" ng-repeat="sc in vm.category.subCat" rel="tab1">{{sc | removeUnderscore}}</a>
   </div>
 
   <div class="vertical-tab-content-container">
@@ -19,5 +31,5 @@
     </div>
   </div>
 </div>
-
+-->
 
