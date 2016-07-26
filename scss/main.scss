@@ -9,99 +9,82 @@
 @import "components/footer";
 @import "components/panel";
 @import "components/spinner";
-@import "components/vtabs";
-@import "components/accordion-tabs";
+@import "components/cards";
+
+
+@import "pages/category";
+
+$medium-screen: 300px;
+$tablet-screen: 426px;
+$large-screen: 860px;
 
 
 .page{
 
     display:flex;
-    
+
     min-height: 100vh;
     flex-direction: column;
-.content{
-    align-items: flex-start;
-    flex: 1;
-    text-align:left;
-    width:100%;
-    @include outer-container; 
-    &.ng-enter, .ng-leave {
-    // transition:all 0.2s ease-in-out;
-    
-    }
+    .content{
+        align-items: flex-start;
+        flex: 1;
+        text-align:left;
+        width:100%;
+        @include outer-container; 
+        &.ng-enter, .ng-leave {
+            // transition:all 0.2s ease-in-out;
 
-    &.ng-enter {
-        opacity: 0;
-        animation: fade-out;
-        
-        animation-duration: 0.5s;   
-    }
-
-    &.ng-enter-active {
-    opacity: 1;    
-    animation: fade-in;
-        animation-duration: 1s;
-    }
-
-    &.ng-leave {
-    opacity: 1;  
-     animation: fade-in;   
-    
-        animation-duration: 1s;
-    }
-
-    &.ng-leave-active {
-    opacity: 0;   
-   animation: fade-out;
-        animation-duration: 0.5s; 
-    } 
-
- @keyframes fade-out {
-    0%   { opacity: 1; }    
-    100% { 
-        opacity: 0;
-        display:none; 
-    }
-    }
-
-    @keyframes fade-in {
-    0%   { 
-        position:absolute;
-        opacity:0; 
         }
-    60%   { opacity: 0; }
-    100% { opacity: 1; }
+
+        &.ng-enter {
+            opacity: 0;
+            animation: fade-out;
+
+            animation-duration: 0.5s;   
+        }
+
+        &.ng-enter-active {
+            opacity: 1;    
+            animation: fade-in;
+            animation-duration: 1s;
+        }
+
+        &.ng-leave {
+            opacity: 1;  
+            animation: fade-in;   
+
+            animation-duration: 1s;
+        }
+
+        &.ng-leave-active {
+            opacity: 0;   
+            animation: fade-out;
+            animation-duration: 0.5s; 
+        } 
+
+        @keyframes fade-out {
+            0%   { opacity: 1; }    
+            100% { 
+                opacity: 0;
+                display:none; 
+            }
+        }
+
+        @keyframes fade-in {
+            0%   { 
+                position:absolute;
+                opacity:0; 
+            }
+            60%   { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
     }
-        
-}
 
 
 }
 
 .subHeader{
     padding:2em 0
-}
-
-.cat-menu{
-    $color: white;
-    $background: #40526b; 
-     @include outer-container;  
-     @include row ();    
-    background: $background;
-    color: transparentize($color, 0.4);
-    .item{
-        cursor: pointer;
-        text-align: center;
-        padding:1em;
-        word-break: break-all;
-        
-        @include span-columns(4);
-        margin-right:0.1em;
-        transition: all 0.25s;
-        &:hover{
-            background: darken($background, 2%);
-            color: transparentize($color, 0);
-        }
-    }
 }
 

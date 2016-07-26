@@ -47,7 +47,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: "/categories",            
             views: Object.assign(defaultRoute, {
                 content: {
-                    templateUrl: "/templates/categories.tmpl.html"
+                    templateUrl: "/templates/categories.tmpl.html",
+                    controller: 'categoriesCtrl as vm'
                 }
             })
         }) .state('category', {

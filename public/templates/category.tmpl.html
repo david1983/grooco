@@ -1,16 +1,23 @@
-
-<div back-img = '{{vm.category.img}}' ng-if="vm.category" class="hero category" >
-    {{vm.categories}}
-<div class="subHeader">
-    <h2>{{vm.category.name}}</h2>
-</div>
+<div back-img='{{vm.category.img}}' ng-if="vm.category" class="hero category">
+  {{vm.categories}}
+  <div class="subHeader">
+    <h2>{{vm.category.name | removeUnderscore}}</h2>
+  </div>
 </div>
 
 <div class="cat-menu">
   <div class="item" ng-repeat="sc in vm.category.subCat">
-    {{sc}}
+    <a ui-sref="category({name: vm.category.name, sub:$index})">{{sc.name | removeUnderscore}}</a>
   </div>
 </div>
+
+
+<div class="cards-wrapper">
+  <ul class="cards">
+    <card product="p" ng-repeat="p in vm.products" />
+  </ul>
+</div>
+
 
 
 <!--<ul class="accordion-tabs-minimal">
@@ -38,4 +45,3 @@
   </div>
 </div>
 -->
-

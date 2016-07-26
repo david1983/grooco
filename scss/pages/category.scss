@@ -1,0 +1,44 @@
+@import "bourbon";
+@import "neat";
+
+.cat-menu{
+    $color: white;
+    $background: #40526b;
+
+    @include outer-container;  
+    @include row ();    
+    background: $background;
+    color: transparentize($color, 0.4);
+    text-align:center;
+    .item{
+        background: $background;
+        cursor: pointer;
+        text-align: center;        
+        word-break: break-all;
+        padding:1em;
+        transition: all 0.25s;
+        @include span-columns(3);
+        @include omega(4n);
+
+
+        @include media(max-width 800px) {
+            @include span-columns(6);
+            @include omega(2n)
+        }
+
+        @include media(max-width 480px) {                        
+            @include span-columns(12);                                          
+        }
+
+        a{
+            color: transparentize($color, 0.4);
+            display: inline-block;
+            text-decoration: none;            
+        }
+        &:hover{
+            background: darken($background, 2%);
+            a{color: transparentize($color, 0);}
+        }
+    }
+}
+

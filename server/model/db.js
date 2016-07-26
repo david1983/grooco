@@ -28,7 +28,7 @@ const db = {
          MongoClient.connect(url, function (err, db) {
                 if(err) return reject(err)
                 var collection = db.collection(collectionName);                
-                collection.insertOne(obj,function (err, result) {
+                collection.insertMany(obj,function (err, result) {
                     if(err) return reject(err)                    
                     resolve(result)
                     db.close();

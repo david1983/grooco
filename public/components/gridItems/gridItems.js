@@ -1,14 +1,6 @@
 app.component('gridItems', {
     templateUrl: '/components/gridItems/gridItems.tmpl.html',
-    controller: function ( categories, $window, $timeout) {        
-        var Categories = new categories()
-
-        console.log(Categories)
-
-        Categories.get()
-            .then(function(res){
-                this.categories = res
-            }.bind(this)) 
+    controller: function (  $window, $timeout) {                
         
         this.setGrid = function () {
             
@@ -37,6 +29,7 @@ app.component('gridItems', {
 
     },
     bindings: {
+        categories: '<',
         max: '<',
     }
 })
