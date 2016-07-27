@@ -6,7 +6,7 @@ var defaultRoute = {
     footer: { templateUrl: "/templates/footer.tmpl.html" },
 }
 
-var app = angular.module('grooco', ['ui.router']);
+var app = angular.module('grooco', ['ui.router','ngAnimate']);
 app.config(function ($stateProvider, $urlRouterProvider) {
     //
     // For any unmatched url, redirect to /state1
@@ -51,7 +51,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 }
             })
         }) .state('category', {
-            url: "/category/:name/:sub",            
+            url: "/category/:name/:sub ",            
             views: Object.assign(defaultRoute, {
                 content: {
                     templateUrl: "/templates/category.tmpl.html",

@@ -1,7 +1,7 @@
 <ul id="js-navigation-menu" class="navigation-menu show">
-  <li class="nav-link"><a ui-sref="home">Home</a></li>
-  <li class="nav-link"><a ui-sref="categories">Categories</a></li>
-  <li class="nav-link"><a ui-sref="products">Products</a></li>
-  <li class="nav-link"><a ui-sref="about">About Us</a></li>
-  <li class="nav-link"><a ui-sref="contact">Contact</a></li>
+  <li class="nav-link" ng-class="{'active-nav-item': $ctrl.state.name == 'home'}"><a ui-sref="home" >Home</a></li>
+  <li class="nav-link" ng-class="{'active-nav-item': $ctrl.state.name == 'categories'}"><a ui-sref="categories">Categories</a></li>
+  <li class="nav-link" ng-class="{'active-nav-item': $ctrl.state.name == 'products'}"><a ui-sref="products">Products</a></li>
+  <li class="nav-link" ng-class="{'active-nav-item': $ctrl.state.name == 'about'}"><a ui-sref="about">About Us</a></li>
+  <li class="nav-link" ng-class="{'active-nav-item': $ctrl.state.name == 'contact_us'}"><a ui-sref="contact">Contact</a></li>
 </ul>

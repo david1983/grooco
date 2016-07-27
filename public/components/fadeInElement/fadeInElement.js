@@ -1,7 +1,10 @@
 app.directive('fadeInElement', function ($timeout, $window) {
     function link(scope, element, attrs) {        
-        element.addClass('js-fade-element-hide');        
-        handleFade(element);
+        element.addClass('js-fade-element-hide');
+        $timeout(function(){
+            handleFade(element);
+        },500)        
+        
         $window.addEventListener('scroll', function(){
             handleFade(element)
         })
@@ -18,7 +21,7 @@ function handleFade(element) {
     var windowInnerHeight = window.innerHeight;
     var elementTopToWindowTop = elementTopToPageTop - windowTopToPageTop;
     var elementTopToWindowBottom = windowInnerHeight - elementTopToWindowTop;
-    var distanceFromBottomToAppear = 20;
+    var distanceFromBottomToAppear = 10;
 
     if (elementTopToWindowBottom > distanceFromBottomToAppear) {
         $(element).addClass('js-fade-element-show');

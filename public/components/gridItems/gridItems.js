@@ -1,6 +1,6 @@
 app.component('gridItems', {
     templateUrl: '/components/gridItems/gridItems.tmpl.html',
-    controller: function ( categories, $window) {        
+    controller: function ( categories, $window, $timeout) {        
         var Categories = new categories()
 
         console.log(Categories)
@@ -30,7 +30,10 @@ app.component('gridItems', {
         }
 
         $window.addEventListener('resize', this.setGrid )
-        this.setGrid();
+        $timeout(function(){
+            this.setGrid();
+        }.bind(this),200)
+        
 
     },
     bindings: {

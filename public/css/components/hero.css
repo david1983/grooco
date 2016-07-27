@@ -30,7 +30,6 @@ html {
   .hero .hero-content {
     z-index: 2;
     width: 80%;
-    max-width: 20em;
     text-align: center; }
     .hero .hero-content h1 {
       text-align: center;

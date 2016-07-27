@@ -42,7 +42,7 @@ header.navigation {
     max-height: $navigation-height;
     padding-left: $navigation-padding;
     padding-right: 2em;
-
+    
     logo-svg {
       max-height: $navigation-height;
       padding: 0.4em 0;
@@ -141,6 +141,7 @@ header.navigation {
   }
 
   .active-nav-item a {
+    color: $navigation-color-hover!important;
     border-bottom: 1px solid $navigation-active-link-color;
     padding-bottom: 3px;
   }

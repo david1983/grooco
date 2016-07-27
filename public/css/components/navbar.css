@@ -92,6 +92,7 @@ header.navigation {
       header.navigation ul li.nav-link a:focus, header.navigation ul li.nav-link a:hover {
         color: white; }
   header.navigation .active-nav-item a {
+    color: white !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     padding-bottom: 3px; }
   header.navigation li.more.nav-link {

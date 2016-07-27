@@ -1,4 +1,4 @@
-app.controller('categoryCtrl', function($scope, $stateParams, categories, products){
+app.controller('categoryCtrl', function( $stateParams, categories, products){
         this.params = $stateParams
      var Categories=  new categories($stateParams.name)
      var Products = new products();
