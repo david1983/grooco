@@ -28,10 +28,11 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             })
         })
         .state('products', {
-            url: "/products",
+            url: "/products?search",
             views: Object.assign(defaultRoute, {
                 content: {
-                    templateUrl: "/templates/products.tmpl.html"
+                    templateUrl: "/templates/products.tmpl.html",
+                    controller: 'productsCtrl as vm'
                 }
             })
         })
@@ -39,7 +40,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: "/product",
             views: Object.assign(defaultRoute, {
                 content: {
-                    templateUrl: "/templates/product.tmpl.html"
+                    templateUrl: "/templates/product.tmpl.html",
+                    controller: 'productCtrl as vm'
                 }
             })
         })

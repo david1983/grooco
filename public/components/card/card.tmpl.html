@@ -1,0 +1,17 @@
+
+<div class="cards-wrapper">
+  <ul class="cards">
+    <li class="cards__item" ng-repeat="product in $ctrl.products" ng-if="$ctrl.HTMLvalidation">
+      <div fade-in-element  class="card">
+        <div class="card__image" back-img="{{product.image}}"></div>
+        <div class="card__content">
+          <div class="card__title">{{product.name}}</div>                  
+          <p class="card__text" ng-bind-html="product.summaryHTML"></p>
+          <star-rating />
+          <button class="btn btn--block card__btn">Button</button>
+        </div>
+      </div>
+    </li>
+    
+  </ul>
+</div>

@@ -10,15 +10,11 @@
 @import "components/panel";
 @import "components/spinner";
 @import "components/cards";
+@import "components/star-rating";
 
 @import "pages/category";
 
-
 @import "components/fadeInElement";
-
-$medium-screen: 300px;
-$tablet-screen: 426px;
-$large-screen: 860px;
 
 .page{
 

@@ -6,15 +6,15 @@ $gray-lighter:              #ececec;
 $gray-lightest:             lighten($gray-lighter,4%);
 
 
+
+.cards-wrapper{
+
+
     *,
 *::before,
 *::after { 
   box-sizing: border-box;
 }
-
-.cards-wrapper{
-
-
   color: $gray;
   font-family: 'Roboto','Helvetica Neue', Helvetica, Arial, sans-serif;
   font-style: normal;

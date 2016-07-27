@@ -11,8 +11,8 @@
     <div class="navigation-tools">
       <div class="search-bar">
         <form role="search">
-          <input type="search" placeholder="Enter Search" />
-          <button type="submit">
+          <input type="search" placeholder="Enter Search" ng-model="searchTerms"/>
+          <button type="submit" ui-sref="products({search: searchTerms})">
             <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png" alt="Search Icon">
           </button>
         </form>

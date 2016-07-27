@@ -11,10 +11,7 @@ app.controller('categoryCtrl', function ($stateParams, categories, products, $sc
             console.log({main_category: this.category.subCat[$stateParams.sub].name})
              products.get({category: this.category.subCat[$stateParams.sub].name})
             .then(function(result){
-                this.products = result.data.map(function(i){
-                    i.summary =  $sce.trustAsHtml(i.summary);
-                    return i;
-                });
+               this.products = result.data;
             }.bind(this))
         }.bind(this))
 
