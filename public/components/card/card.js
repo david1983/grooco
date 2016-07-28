@@ -7,8 +7,7 @@ app.component('cards', {
                     i.name = i.name.replace(/\&amp\;lt\;br\&amp\;gt\;/g, '<br>').replace(/&amp;/g, '&').replace(/&#039;/g, '\'')
                     i.summary = i.summary.replace(/\&amp\;lt\;br\&amp\;gt\;/g, '<br>').replace(/&amp;/g, '&')
                     i.summary = (i.summary != 'null') ? i.summary : ''                    
-                    i.summaryHTML = $sce.trustAsHtml(i.summary);
-                    console.log(i.summaryHTML)
+                    i.summaryHTML = $sce.trustAsHtml(i.summary);                    
                     return i;
                 });
                 this.HTMLvalidation = true;

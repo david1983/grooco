@@ -3,7 +3,7 @@
 <div class="grid-items" ng-if="$ctrl.categories">  
 
   <a fade-in-element ui-sref="category({name: v.name, sub:0})" class="grid-item fade-in-element"
-  back-img = '{{v.img}}'  
+  back-img = 'v.imgs'  
    ng-class="{'grid-item-big': $ctrl.grid[$index]==2}" ng-repeat="(k, v) in $ctrl.categories" ng-if="$index<$ctrl.max">   
          <div class="grad"></div>
          

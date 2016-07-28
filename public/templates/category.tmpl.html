@@ -1,17 +1,19 @@
-<div back-img='{{vm.category.img}}' ng-if="vm.category" class="hero category">
+
+<div back-img='vm.category.imgs' format="large" ng-if="vm.category" class="hero category" style="background:#40526b">
   {{vm.categories}}
   <div class="subHeader">
     <h2>{{vm.category.name | removeUnderscore}}</h2>
   </div>
 </div>
-
-<div class="cat-menu">
+<br>
+<grid-items max="999" categories='vm.category.subCat'></grid-items>
+<!--<div class="cat-menu">
    <a class="item" ng-repeat="sc in vm.category.subCat" ui-sref="category({name: vm.category.name, sub:$index})">
   
    {{sc.name | removeUnderscore}}
   
   </a>
-</div>
+</div>-->
 
 
 <cards products="vm.products"></cards>

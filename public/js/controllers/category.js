@@ -2,14 +2,16 @@ app.controller('categoryCtrl', function ($stateParams, categories, products, $sc
 
     categories.get({ name: $stateParams.name }).then(function (result) {
         result = result.data
+        console.log(result)
         this.category = {
             name: $stateParams.name,
-            img: result.img
+            imgs: result[0].imgs
         }
+        console.log(this.category)
         categories.get({ main: $stateParams.name }).then(function (result) {
             this.category.subCat = result.data
-            console.log({main_category: this.category.subCat[$stateParams.sub].name})
-             products.get({category: this.category.subCat[$stateParams.sub].name})
+            // console.log({main_category: this.category.subCat[$stateParams.sub].name})
+             products.get({category: this.category.name})
             .then(function(result){
                this.products = result.data;
             }.bind(this))
