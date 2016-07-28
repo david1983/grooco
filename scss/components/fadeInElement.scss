@@ -6,20 +6,20 @@
   $base-border-radius: 3px !default;
   $base-background-color: white !default;
   $base-line-height: 1.5em !default;
-  $base-spacing: 1.5em !default;
+  $base-spacing: 0.5em !default;
   $dark-gray: #333 !default;
   $base-font-color: $dark-gray !default;
 
   @include clearfix;
   background: $base-background-color;
-  border: 1px solid silver;
+  // border: 1px solid silver;
   border-radius: $base-border-radius;
-  box-shadow: 0 2px 2px transparentize(black, 0.8);
+  // box-shadow: 0 2px 2px transparentize(black, 0.8);
   line-height: $base-line-height;  
   padding: $base-spacing;
-  text-align: center;
+  // text-align: center;
   width: 100%;
-
+  transition: all 0.5s!important;
   p {
     color: $base-font-color;
     line-height: $base-line-height;
@@ -28,8 +28,11 @@
 
 .js-fade-element-hide {
   opacity: 0!important;
+  transform: scale(0);
 }
 
 .js-fade-element-show {
-  opacity: 1!important;  
+  opacity: 1!important;
+  transform: scale(1);  
 }
+

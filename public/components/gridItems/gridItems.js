@@ -67,7 +67,8 @@ app.directive('backImg', function () {
         if (url) {
             var obj = {                                
                 'background-image': 'url(' + url + ')',
-                'background-size': 'cover'
+                'background-size': 'cover',
+                'background-position' : '50% 50%'
             }
             if(url.style)
                obj =  Object.assign({ 

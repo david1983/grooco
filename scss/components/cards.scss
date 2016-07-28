@@ -41,6 +41,14 @@ img {
   color: $gray-dark;
   padding: 0.5rem;
   text-transform: lowercase;
+  transition: 0.25s all;
+		&:hover{
+			transform: translateY(-2px);
+			box-shadow: 0 2px 10px -2px rgba(0,0,0,0.50);
+			background: $gray;
+			color: white;
+			border-color: $gray-light;
+		}
 }
 
 .btn--block {
@@ -60,16 +68,21 @@ img {
 .cards__item {
   display: flex;
   padding: 1rem;
-  @media(min-width: 40rem) {
+  @media(min-width: 27rem) {
     width: 50%;
   }
-  @media(min-width: 56rem) {
+  @media(min-width: 50rem) {
     width: 33.3333%;
+  }
+  @media(min-width: 80rem) {
+    width: 25%;
+  }
+  @media(min-width: 100rem) {
+    width: 20%;
   }
 }
 
-.card {
-    transition:all 1s;
+.card {    
   background-color: white;
   border-radius: 0.25rem;
   box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
@@ -102,11 +115,11 @@ img {
 	  display: block;
     padding-top: 56.25%; // 16:9 aspect ratio
   }
-  @media(min-width: 40rem) {
-    &::before {
-      padding-top: 66.6%; // 3:2 aspect ratio
-    }
-  }
+  // @media(min-width: 40rem) {
+  //   &::before {
+  //     padding-top: 66.6%; // 3:2 aspect ratio
+  //   }
+  // }
 }
 
 .card__image--flowers {

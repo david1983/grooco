@@ -6,13 +6,11 @@ html {
 
 .fade-in-element {
   background: white;
-  border: 1px solid silver;
   border-radius: 3px;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
   line-height: 1.5em;
-  padding: 1.5em;
-  text-align: center;
-  width: 100%; }
+  padding: 0.5em;
+  width: 100%;
+  transition: all 0.5s !important; }
   .fade-in-element::after {
     clear: both;
     content: "";
@@ -22,7 +20,9 @@ html {
     line-height: 1.5em; }
 
 .js-fade-element-hide {
-  opacity: 0 !important; }
+  opacity: 0 !important;
+  transform: scale(0); }
 
 .js-fade-element-show {
-  opacity: 1 !important; }
+  opacity: 1 !important;
+  transform: scale(1); }

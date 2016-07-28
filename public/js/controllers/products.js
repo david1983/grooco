@@ -1,10 +1,7 @@
-app.controller('productsCtrl', function($stateParams, products){
-    console.log($stateParams.search)
-    var searchObj = ($stateParams.search) ? {name: $stateParams.search }: { hasRating: true, averageRating:{$gt: 4.9}}
-     console.log(searchObj)
+app.controller('productsCtrl', function ($stateParams, products) {    
+    var searchObj = ($stateParams.search) ? { name: $stateParams.search } : { hasRating: true, averageRating: { $gt: 4.9 } }    
     products.get(searchObj)
-        .then(function(result){
-            console.log(result)
+        .then(function (result) {            
             this.products = result.data
         }.bind(this))
 })

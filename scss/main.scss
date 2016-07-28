@@ -28,6 +28,10 @@
         text-align:left;
         width:100%;
         @include outer-container; 
+
+        @include media(50rem){
+            @include outer-container(100%);
+        }
         &.ng-enter, .ng-leave {
             // transition:all 0.2s ease-in-out;
 
@@ -77,8 +81,10 @@
         }
 
     }
+}
 
-
+section.main{
+    @include outer-container(80%); 
 }
 
 .subHeader{

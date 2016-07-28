@@ -1,6 +1,14 @@
 @import "bourbon";
 @import "neat";
 
+.panel-wrapper{
+  display:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+}
+
 .sliding-panel-content {
   $action-color: #477DCA !default;
   $dark-gray: #333 !default;

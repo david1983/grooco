@@ -1,13 +1,12 @@
 app.directive('fadeInElement', function ($timeout, $window) {
     function link(scope, element, attrs) {        
-        element.addClass('js-fade-element-hide');
+        element.addClass('fade-in-element');
         $timeout(function(){
             handleFade(element);
         },500)        
         
-        $window.addEventListener('scroll', function(){
-            handleFade(element)
-        })
+        $window.addEventListener('scroll', function(){ handleFade(element)})
+        $window.addEventListener('resize', function(){ handleFade(element)})
     }
     return {
         link: link

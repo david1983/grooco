@@ -9,9 +9,9 @@
 .grid-items {
   $action-color: #477DCA !default;
   $base-background-color: white !default;
-  $medium-screen: 300px !default;
-  $tablet-screen: 426px !default;
-  $large-screen: 860px !default;
+  $medium-screen: 20rem !default;
+  $tablet-screen: 27rem !default;
+  $large-screen: 50rem !default;
   $grid-items-background: $base-background-color;
   $grid-item-background: desaturate($action-color, 30%);
   $grid-item-colors:
@@ -48,28 +48,22 @@
     overflow: hidden;
     padding: 2em;
     text-align: center;
-    text-decoration: none;
-    transition: opacity 0.4s ease-in-out;
+    text-decoration: none;    
     width: 100%;
      background-position: center;
      background-repeat: no-repeat;
      background-size: cover;
 
     .grad{
-content: '';
+    content: '';
 		position: absolute;
 		top: 0;
 		right: 0;
 		bottom: 0;
 		left: 0;
     background: linear-gradient(to top, rgba(0,0,0,0.5), rgba(255,255,255,0));
-		// opacity: .3;
-    transition:0.5s all
+		// opacity: .3;    
     }
-    
-     
-  
-
 
      @include media($tablet-screen) {
       @include grid-item-columns(4);

@@ -4,6 +4,13 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
+.panel-wrapper {
+  display: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0; }
+
 .sliding-panel-content {
   position: fixed;
   top: 0;

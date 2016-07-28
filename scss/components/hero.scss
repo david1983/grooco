@@ -3,7 +3,7 @@
 
 .hero {  
   overflow:hidden;
-  $large-screen: 50em !default;  
+  $large-screen: 50rem !default;  
   align-items: center; 
   display: flex;
   justify-content: center;
@@ -23,6 +23,7 @@ position: relative;
   min-width:100%;
   
   z-index:0;
+
   @include media(565px) {
     height:auto;
     width:100%;
