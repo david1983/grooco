@@ -1,21 +1,19 @@
 
-<spinner-css  ng-if="!$ctrl.categories"/>
-<div class="grid-items" ng-if="$ctrl.categories">  
+<spinner-css  ng-if="!$ctrl.categories"></spinner-css>
+<div class="grid-items" ng-if="$ctrl.categories">
   {{vm.arr}}
 	<div ng-repeat="r in $ctrl.arr">
-    <div grid-item cols={{$ctrl.cols}} margin=1  big="{{v.size}}" ng-repeat="v in r track by $index">
+    <div grid-item cols='$ctrl.cols' margin=1  big="{{v.size}}" ng-repeat="v in r track by $index">
+      <a fade-in-element ui-sref="category({name: v.name, sub:0})" class="grid-item fade-in-element" style="width:100%" ng-if="$index<$ctrl.max">
+        <div class="grad"></div>
 
+        <!--<img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_square.png" alt="category logo">-->
+        <h1>{{v.name | removeUnderscore}}</h1>
+        <!--<p>
+          <span ng-repeat="(sk,sv) in v " ng-if="$index<2"> {{sk| removeUnderscore}}</span>
+        </p>-->
+      </a>
     </div>
-  <a fade-in-element ui-sref="category({name: v.name, sub:0})" class="grid-item fade-in-element"
-  back-img = 'v.imgs'  
-   ng-class="{'grid-item-big': v.rating>$ctrl.ratingLimit}" ng-repeat="(k, v) in r" ng-if="$index<$ctrl.max">   
-         <div class="grad"></div>
-         
-    <!--<img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_square.png" alt="category logo">-->
-    <h1>{{v.name | removeUnderscore}}</h1>
-    <!--<p>
-      <span ng-repeat="(sk,sv) in v " ng-if="$index<2"> {{sk| removeUnderscore}}</span>
-    </p>-->
-  </a>
+
   </div>
 </div>

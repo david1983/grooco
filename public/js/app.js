@@ -1,12 +1,12 @@
 var defaultRoute = {
-    navbar: { templateUrl: "/templates/header.tmpl.html" },
+    navbar: { templateUrl: "/components/header/header.tmpl.html" },
     content: {
         templateUrl: "/templates/home.tmpl.html"
     },
-    footer: { templateUrl: "/templates/footer.tmpl.html" },
+    footer: { templateUrl: "/components/footer/footer.tmpl.html" },
 }
 
-var app = angular.module('grooco', ['ui.router','ngAnimate']);
+var app = angular.module('grooco', ['ui.router','ngAnimate','firebase']);
 app.config(function ($stateProvider, $urlRouterProvider) {
     //
     // For any unmatched url, redirect to /state1
@@ -14,15 +14,11 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
 
     $stateProvider
-        .state('notfound', {
-            url: "/404",
-            templateUrl: "/templates/404.tmpl.html",
-        })
         .state('home', {
             url: "/",
             views: Object.assign(defaultRoute, {
                 content: {
-                    templateUrl: "/templates/home.tmpl.html",
+                    templateUrl: "/pages/home/home.tmpl.html",
                     controller: 'homeCtrl as vm'
                 }
             })
@@ -31,7 +27,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: "/products?search",
             views: Object.assign(defaultRoute, {
                 content: {
-                    templateUrl: "/templates/products.tmpl.html",
+                    templateUrl: "/pages/products/products.tmpl.html",
                     controller: 'productsCtrl as vm'
                 }
             })
@@ -40,7 +36,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: "/product",
             views: Object.assign(defaultRoute, {
                 content: {
-                    templateUrl: "/templates/product.tmpl.html",
+                    templateUrl: "/pages/product/product.tmpl.html",
                     controller: 'productCtrl as vm'
                 }
             })
@@ -49,17 +45,46 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: "/categories",            
             views: Object.assign(defaultRoute, {
                 content: {
-                    templateUrl: "/templates/categories.tmpl.html",
+                    templateUrl: "/pages/categories/categories.tmpl.html",
                     controller: 'categoriesCtrl as vm'
                 }
             })
-        }) .state('category', {
+        })
+        .state('category', {
             url: "/category/:name/:sub ",            
             views: Object.assign(defaultRoute, {
                 content: {
-                    templateUrl: "/templates/category.tmpl.html",
+                    templateUrl: "/pages/category/category.tmpl.html",
                     controller: 'categoryCtrl as vm'
 
+                }
+            })
+        })
+        .state('cart', {
+            url: "/cart",
+            views: Object.assign(defaultRoute, {
+                content: {
+                    templateUrl: "/pages/cart/cart.tmpl.html",
+                    controller: 'cartCtrl as vm'
+
+                }
+            })
+        })
+        .state('contacts', {
+            url: "/contacts",
+            views: Object.assign(defaultRoute, {
+                content: {
+                    templateUrl: "/pages/contacts/contacts.tmpl.html",
+                    controller: 'contactsCtrl as vm'
+
+                }
+            })
+        })
+        .state('about', {
+            url: "/about",
+            views: Object.assign(defaultRoute, {
+                content: {
+                    templateUrl: "/pages/about/about.tmpl.html",
                 }
             })
         });

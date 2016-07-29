@@ -1,7 +1,7 @@
 app.component('gridItems', {
     templateUrl: '/components/gridItems/gridItems.tmpl.html',
     controller: function ($window, $timeout) {
-        this.cols = ($window.innerWidth > 768) ? 4 : 3;
+        this.cols = ($window.innerWidth > 768) ? 4 : ($window.innerWidth > 450) ? 3: 1;
         this.randomImg = function (arr) {
             if (!arr) return '';
             var idx = Math.floor(Math.random() * arr.length - 1) + 0
@@ -13,17 +13,17 @@ app.component('gridItems', {
         }
 
         this.$onChanges = function (changesObj) {
-            if (changesObj.categories && typeof changesObj.categories.currentValue != 'undefined') {               
+            if (changesObj.categories && typeof changesObj.categories.currentValue != 'undefined') {
                 $timeout(function () {
                     this.arr = setGrid(changesObj.categories.currentValue, this.cols, this.ratingLimit)
                 }.bind(this), 200)
             }
         }
 
-         $window.addEventListener('resize', function () {
-                    this.cols = ($window.innerWidth > 768) ? 4 : 3;
-                    this.arr = setGrid(this.categories, this.cols, this.ratingLimit)
-                }.bind(this))
+        $window.addEventListener('resize', function () {
+            this.cols = ($window.innerWidth > 768) ? 4 : ($window.innerWidth > 450) ? 3: 1;
+            this.arr = setGrid(this.categories, this.cols, this.ratingLimit)
+        }.bind(this))
     },
     bindings: {
         ratingLimit: '<',
@@ -31,58 +31,6 @@ app.component('gridItems', {
         max: '<',
     }
 })
-
-app.directive('backImg', function () {
-    function link(scope, element, attrs) {
-        if (!scope.imgs) return
-        var url;
-
-        if (typeof scope.imgs == 'string')
-            url = scope.imgs
-        else {
-            url = (scope.imgs.length > 0) ? scope.imgs[0].src : false;
-        }
-
-        url = (attrs.format == 'large') ? url.replace('-medium', '') : url
-
-        if (url) {
-            var obj = {
-                'background-image': 'url(' + url + ')',
-                'background-size': 'cover',
-                'background-position': '50% 50%'
-            }
-            if (url.style)
-                obj = Object.assign({
-                    'border-color': url.style.split(':')[1],
-                    'background': url.style.split(':')[1]
-                }, obj)
-            element.css(obj);
-        }
-
-    };
-
-    return {
-        scope: { format: '&format', imgs: '=backImg' },
-        link: link
-    }
-})
-    .directive('gridItem', function () {
-        return {
-            link: function (scope, elem, attrs) {
-                var cols = attrs.cols;
-                var margin = attrs.margin || 0
-                var width = 100 / cols - (margin * 2);
-                if (attrs.big == 2) {
-                    width = 100 / (cols / 2) - (margin * 2);
-                }
-                angular.element(elem).css({
-                    width: width + '%',
-                    margin: margin + '%'
-                })
-            }
-        }
-    })
-    ;
 
 
 function sortArrByVal(arr, val_name) {
@@ -110,7 +58,7 @@ function setGrid(cat, cols, ratingLimit) {
     var arr = []
     var n = 0;
     while (big.length > 0 || small.length > 0) {
-        var rowVal = row.reduce(function (a, i) {  return a += i.size }, 0) 
+        var rowVal = row.reduce(function (a, i) {  return a += i.size }, 0)
         if ( rowVal == cols) {
             arr.push(row); row = []; n++;
         }
