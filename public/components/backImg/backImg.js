@@ -1,6 +1,8 @@
 app.directive('backImg', function () {
     function link(scope, element, attrs) {
+
         if (!scope.imgs) return
+        console.log(scope.imgs)
         var url;
 
         if (typeof scope.imgs == 'string')
