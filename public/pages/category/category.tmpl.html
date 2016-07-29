@@ -5,7 +5,11 @@
   </div>
 </div>
 <br>
+
 <section class="main">
+
+
   <grid-items max="999" rating-limit="1.5" categories='vm.category.subCat'></grid-items>
+  <spinner-css ng-if="!vm.products"></spinner-css>
   <cards products="vm.products"></cards>
 </section>

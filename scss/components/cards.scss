@@ -34,6 +34,7 @@ img {
 }
 
 .btn {
+  cursor: pointer;
   background-color: white;
   border: 1px solid $gray-light;
   //border-radius: 1rem;
@@ -66,23 +67,25 @@ img {
 }
 
 .cards__item {
+
   display: flex;
   padding: 1rem;
   @media(min-width: 27rem) {
     width: 50%;
   }
-  @media(min-width: 50rem) {
+  @media(min-width: 60rem) {
     width: 33.3333%;
   }
-  @media(min-width: 80rem) {
+  @media(min-width: 90rem) {
     width: 25%;
   }
-  @media(min-width: 100rem) {
-    width: 20%;
-  }
+
+
+
 }
 
-.card {    
+.card {
+  padding:0;
   background-color: white;
   border-radius: 0.25rem;
   box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
@@ -90,7 +93,11 @@ img {
   width:100%;
   flex-direction: column;
   overflow: hidden;
+  border: 1px solid #eee;
+  cursor:pointer;
+  transition:0.25s all!important;
   &:hover {
+    transform: scale(1.1) translateY(-5%) ;
     .card__image {
       filter: contrast(100%);
     }
@@ -105,21 +112,16 @@ img {
 }
 
 .card__image {
+  background:#fff;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 50%!important;    
   position: relative;
-  transition: filter 0.5s cubic-bezier(.43,.41,.22,.91);;
   &::before {
     content: "";
-	  display: block;
-    padding-top: 56.25%; // 16:9 aspect ratio
+	display: block;
+    padding-top: 56.25%;
   }
-  // @media(min-width: 40rem) {
-  //   &::before {
-  //     padding-top: 66.6%; // 3:2 aspect ratio
-  //   }
-  // }
 }
 
 .card__image--flowers {
@@ -144,15 +146,49 @@ img {
   font-weight: 300;
   letter-spacing: 2px;
   text-transform: uppercase;
+  margin-bottom:0.5rem;
 }
 
 .card__text {
   flex: 1 1 auto;
   font-size: 0.875rem;
   line-height: 1.5;
-  margin-bottom: 1.25rem;
 }
 
+  .card__actions{
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    align-items: center;
+    .rates{
+      width:100%;
+      text-align:left;
+    }
+    .price{
+      flex-grow: 1;
+      padding:0.2em;
+      font-size:1.8em;
+      display: flex;
+    }
+    .qty{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .fa{
+        font-size:1.5rem;
+      }
+      input[type="number"]{
+        border: 1px solid $gray-lighter;
+        font-size:1.7em;
+        width:2em;
+      }
+      input[type=number]::-webkit-inner-spin-button,
+      input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+  }
 
 
 }

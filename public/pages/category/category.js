@@ -1,4 +1,16 @@
-app.controller('categoryCtrl', function ($stateParams, categories, products, $sce) {
+app.config(function ($stateProvider, $urlRouterProvider) {
+    $stateProvider
+        .state('category', {
+            url: "/category/:name ",
+            views: Object.assign(defaultRoute, {
+                content: {
+                    templateUrl: "/pages/category/category.tmpl.html",
+                    controller: 'categoryCtrl as vm'
+
+                }
+            })
+        })
+}).controller('categoryCtrl', function ($stateParams, categories, products, $sce) {
 
     categories.get({ name: $stateParams.name }).then(function (result) {
         result = result.data

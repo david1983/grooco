@@ -7,9 +7,24 @@
         <div class="card__content">
           <div class="card__title">{{product.name}}</div>                  
           <p class="card__text" ng-bind-html="product.summaryHTML"></p>
-          <star-rating rate="product.averageRating" />
-          <br/>
-          <button class="btn btn--block card__btn">Add to cart</button>
+
+
+          <br>
+          <div class="card__actions">
+            <div class="rates">
+              <star-rating rate="product.averageRating"></star-rating>
+            </div>
+
+            <div class="price"><b>{{product.price}}</b></div>
+            <div class="qty">
+              <i class="fa fa-angle-up" aria-hidden="true" ng-click="$ctrl.changeQty(product,'+')"></i>
+              <input type="number" ng-model="product.userQty" min="0">
+              <i class="fa fa-angle-down" aria-hidden="true" ng-click="$ctrl.changeQty(product,'-')"></i>
+            </div>
+          </div>
+<br>
+
+          <button class="btn btn--block card__btn" ng-click="$ctrl.addToCart(product)">Add to cart</button>
         </div>
       </div>
     </li>

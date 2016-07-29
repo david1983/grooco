@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grooco Supermarket</title>
@@ -23,9 +24,8 @@
 
 <div class="page">
     <div ui-view="navbar"></div>
-    
+    <breadcrumbs class="breadcrumbs-wrapper" history="history"></breadcrumbs>
     <div ui-view="content"  class="content"></div>
-    
     <div ui-view="footer"></div>
 </div>
 
@@ -70,6 +70,7 @@
     <script src="/components/spinnerCss/spinnerCss.js"></script>
     <script src="/components/card/card.js"></script>
     <script src="/components/starRating/starRating.js"></script>
+    <script src="/components/breadcrumbs/breadcrumbs.js"></script>
 </body>
 
 </html>

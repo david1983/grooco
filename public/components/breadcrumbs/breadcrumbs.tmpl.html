@@ -1,0 +1,9 @@
+<div class="breadcrumb">
+
+    <a ng-repeat="crumb in $ctrl.history track by $index" ng-click="$ctrl.goTo(crumb)">
+        <span ng-if="crumb.params.name">{{ crumb.params.name | removeUnderscore | limitTo:20 }}</span>
+        <span ng-if="crumb.params.search">{{ crumb.params.search | removeUnderscore }}</span>
+        <span ng-if="!crumb.params.search && !crumb.params.name">{{ crumb.name }}</span>
+        &nbsp;
+    </a>
+</div>

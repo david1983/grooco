@@ -30,3 +30,10 @@
 .star-rating label.star:before {
   content: '\f006';
   font-family: FontAwesome; }
+
+.fa-star {
+  color: #ffe83a;
+  text-shadow: 0px 0px 1px red; }
+
+.fa-star-o {
+  color: orange; }
