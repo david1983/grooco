@@ -3,5 +3,6 @@
     <div class="subHeader">
     <h2>Products <span>{{}}</span></h2>
 </div>
+    <spinner-css  ng-if="!vm.products"></spinner-css>
     <cards products="vm.products"></cards>
 </section>
