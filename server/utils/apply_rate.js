@@ -13,9 +13,9 @@ db.find('categories',{})
             db.find('products', search)
                 .then((products)=>{
                     let rating = products.reduce((a,i)=>{return a+=parseInt(i.averageRating)},0)/products.length
-                    console.log(category.name + ':' +  rating.toFixed(0))
+                    console.log(category.name + ':' +  rating.toFixed(2))
                     category.rating = rating.toFixed(2)
-                    db.update('categories', {_id: category._id},category);
+                    db.update('categories', {_id: category._id},category).then(function(result){ console.log('ok')}).catch(console.log);
                 })
         })
     })
