@@ -20,15 +20,14 @@ const db = {
                 
                 obj[k] = new RegExp(regexp, 'gi')
             }           
-        }    
-        console.log(obj)
+        }            
 
         return new Promise(function (resolve, reject) {
             MongoClient.connect(url, function (err, db) {
                 if(err) return reject(err)
                 var collection = db.collection(collectionName);
                 // Find some documents 
-                collection.find(obj).limit(200).toArray(function (err, docs) {
+                collection.find(obj).toArray(function (err, docs) {
                     if(err) return reject(err)                    
                     resolve(docs)
                     db.close();
