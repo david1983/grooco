@@ -12,9 +12,7 @@ app.component('cards', {
                 });
                 this.HTMLvalidation = true;
             }
-
         }
-
     },
     bindings: {
         products: '<'
