@@ -7,7 +7,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grooco Supermarket</title>
-    
+    <script>
+     if('serviceWorker' in navigator ){
+                navigator.serviceWorker.register('/sw.js')
+                .then(()=>{
+                    console.log('yay sw registered')
+                }).catch((e)=>{
+                    console.log(e)
+                })
+            }
+    </script>
 </head>
 
 <body>
