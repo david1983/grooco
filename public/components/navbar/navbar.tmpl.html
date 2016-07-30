@@ -11,13 +11,13 @@
 
 
 
-    <div class="user-actions">
-      <div class="cart-icon">
+    <div class="user-actions" ng-if="$ctrl.user">
+      <div class="cart-icon" >
         <a ui-sref="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
 
       </div>
 
-      <div class="user-img" ng-if="$ctrl.user">
+      <div class="user-img" >
         <img ng-src="{{$ctrl.user.providerData[0].photoURL}}" ng-click="$ctrl.show=!$ctrl.show" />
         <div class="mini-modal" ng-class="{'show': $ctrl.show}">
           <div class="modal-content" >
