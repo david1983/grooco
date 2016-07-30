@@ -28,6 +28,11 @@
   border-spacing: 0;
   width: 100%;
 
+  input[type="number"]{
+    font-size:1.5em!important;
+    width:3em;
+  }
+
   tbody {
     background-color: $table-background;
 
