@@ -2,6 +2,7 @@
 @import "neat";
 
 .breadcrumbs-wrapper{
+  background:#eee;
   width:100%;
 
 }
@@ -25,6 +26,7 @@
   $breadcrumb-color-hover: $action-color;
   $breadcrumb-color-active: $breadcrumb-color;
 
+  cursor: pointer;
   width:100%;
   display: inline-block;
   //margin-bottom: $base-spacing;

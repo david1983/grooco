@@ -1,0 +1,41 @@
+<modal type="'login'" state="vm.modalState"></modal>
+<section class="main" style="overflow:auto">
+{{profile}}
+    <div class="subHeader">
+        <h2>Your Cart <span>{{}}</span></h2>
+    </div>
+
+    <spinner-css  ng-if="!vm.cart"></spinner-css>
+    <div ng-if="vm.cart">
+        <div ng-if="vm.cart.erro">
+            <h3>You need to login to access the cart</h3>
+            <button ng-click="vm.modalState=true">Login Now</button>
+        </div>
+        <table class="tables">
+            <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Qty</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in vm.cart">
+                <td>
+                    <div>
+                        <img ng-src="{{item.image}}"/>
+                        <h3>{{item.name}}</h3>
+
+
+                    </div>
+                </td>
+                <td><h3>{{item.price}}</h3></td>
+                <td><input type="number" ng-model="item.qty" ng-change="vm.cart.$save(item)"/></td>
+                <td><i class="fa fa-times" ng-click="vm.cart.remove(item)"></i></td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+</section>

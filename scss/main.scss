@@ -12,12 +12,15 @@
 @import "components/cards";
 @import "components/star-rating";
 @import "components/breadCrumbs";
+@import "components/modal";
+@import "components/tables";
+
 @import "pages/category";
 
 @import "components/fadeInElement";
 
 .page{
-
+    overflow:hidden;
     display:flex;
 
     min-height: 100vh;

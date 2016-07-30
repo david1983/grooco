@@ -6,20 +6,10 @@ var defaultRoute = {
     footer: { templateUrl: "/components/footer/footer.tmpl.html" },
 }
 
-var app = angular.module('grooco', ['ui.router','ngAnimate','firebase']);
+var app = angular.module('grooco', ['ui.router','ngAnimate','firebase','ngCookies']);
 app.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/");
     $stateProvider
-        .state('cart', {
-            url: "/cart",
-            views: Object.assign(defaultRoute, {
-                content: {
-                    templateUrl: "/pages/cart/cart.tmpl.html",
-                    controller: 'cartCtrl as vm'
-
-                }
-            })
-        })
         .state('about', {
             url: "/about",
             views: Object.assign(defaultRoute, {

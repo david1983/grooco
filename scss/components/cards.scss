@@ -161,6 +161,16 @@ img {
     flex-flow: row wrap;
     align-items: center;
     .rates{
+      display: flex;
+      flex-direction: row;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      h3{
+        display: flex;
+      }
+      star-rating{
+        display: flex;
+      }
       width:100%;
       text-align:left;
     }

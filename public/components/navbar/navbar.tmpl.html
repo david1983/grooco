@@ -8,12 +8,37 @@
     <nav role="navigation">
       <nav-links></nav-links>
     </nav>
+
+
+
+    <div class="user-actions">
+      <div class="cart-icon">
+        <a ui-sref="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+
+      </div>
+
+      <div class="user-img" ng-if="$ctrl.user">
+        <img ng-src="{{$ctrl.user.providerData[0].photoURL}}" ng-click="$ctrl.show=!$ctrl.show" />
+        <div class="mini-modal" ng-class="{'show': $ctrl.show}">
+          <div class="modal-content" >
+            <img ng-src="{{$ctrl.user.providerData[0].photoURL}}" />
+            <p>{{$ctrl.user.email}}</p>
+          </div>
+          <div style="text-align: right">
+            <button ng-click="$ctrl.signOut()">Log out</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
     <div class="navigation-tools">
+
       <div class="search-bar">
         <form role="search">
           <input type="search" placeholder="Enter Search" ng-model="searchTerms"/>
           <button type="submit" ui-sref="products({search: searchTerms})">
-            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png" alt="Search Icon">
+            <i class="fa fa-search" aria-hidden="true"></i>
           </button>
         </form>
       </div>
@@ -22,4 +47,4 @@
 </header>
 
 
-<panel state="$ctrl.panelState"></panel>
+<panel  changed="" state="$ctrl.panelState"></panel>

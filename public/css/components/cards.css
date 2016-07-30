@@ -109,8 +109,16 @@
     flex-flow: row wrap;
     align-items: center; }
     .cards-wrapper .card__actions .rates {
+      display: flex;
+      flex-direction: row;
+      flex-flow: row wrap;
+      justify-content: space-between;
       width: 100%;
       text-align: left; }
+      .cards-wrapper .card__actions .rates h3 {
+        display: flex; }
+      .cards-wrapper .card__actions .rates star-rating {
+        display: flex; }
     .cards-wrapper .card__actions .price {
       flex-grow: 1;
       padding: 0.2em;
