@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+    <script src="https://rawgit.com/angular/bower-angular/master/angular.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>images</title>
+    <style>
+        *{ font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif}
+    </style>
+</head>
+<body ng-controller="mainCtrl as vm">
+
+    <div ng-repeat="c in vm.categories">
+        <h1>{{c.name}}</h1>
+        <input ng-model="c.imgs[0].src" style="width:100%" ng-change="vm.change(c)">
+        <img ng-src="{{c.imgs[0].src}}" width="200px">
+        <hr>
+        <img ng-repeat="i in c.imgs" ng-src="{{i.src}}" width="200px" ng-click="vm.swapimage(c,i)">
+    </div>
+</body>
+<script>
+    angular.module('myapp',[])
+            .controller('mainCtrl',function($http){
+                $http.get('api/categories')
+                        .then(function(result){
+                            this.categories = result.data
+                        }.bind(this))
+
+                this.change = function(cat){
+                    $http.patch('api/categories',cat)
+                            .then(function(result){
+                                console.log(result)
+                            }.bind(this))
+                }
+                this.swapimage=function(cat,i){
+                    cat.imgs.push(cat.imgs[0])
+                    cat.imgs[0] = i;
+                    this.change(cat);
+                }
+            })
+</script>
+</html>

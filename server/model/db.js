@@ -52,6 +52,7 @@ const db = {
          if(obj._id){
             obj._id = new mongo.ObjectID(obj._id);
         }
+        delete newObj._id;
          return new Promise(function (resolve, reject) {
          MongoClient.connect(url, function (err, db) {
                 if(err) return reject(err)

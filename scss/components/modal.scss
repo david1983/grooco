@@ -19,6 +19,9 @@
   $modal-image-height: 135px;
   $modal-image-width: $modal-image-height;
   $modal-trigger-image-width: 300px;
+  button{
+    @include button(#40526b);
+  }
 
   label {
     cursor: pointer;

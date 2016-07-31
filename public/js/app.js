@@ -15,6 +15,25 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             views: Object.assign(defaultRoute, {
                 content: {
                     templateUrl: "/pages/about/about.tmpl.html",
+                    controller: function(){
+                        $(document).ready(function(){
+                            var myLatlng = new google.maps.LatLng(37.4419, -122.1419);
+
+                            var mapOptions = {
+                                zoom: 4,
+                                center: myLatlng,
+                                mapTypeId: google.maps.MapTypeId.ROADMAP
+                            }
+
+                            var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+                            console.log(map)
+                            var marker = new google.maps.Marker({
+                                position: myLatlng,
+                                map: map,
+                                title: 'My Place!'
+                            });
+                        })
+                    },
                 }
             })
         });

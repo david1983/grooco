@@ -44,6 +44,15 @@ router.route('/:collection')
                 res.json(err)
             })
     })
+    .patch(function(req, res){
+        db.update(req.params.collection,{_id: req.body._id}, req.body)
+            .then(function (result) {
+                res.json(result)
+            })
+            .catch(function (err) {
+                res.json(err)
+            })
+    })
     .get(function (req, res) {
         console.log(req.query)
         db.find(req.params.collection, req.query)

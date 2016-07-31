@@ -1,8 +1,12 @@
 @import "bourbon";
 @import "neat";
+
+
+
 @import "reset";
 @import "vars";
 
+@import "components/maps";
 @import "components/navbar";
 @import "components/hero";
 @import "components/grid";
@@ -93,5 +97,4 @@ section.main{
 .subHeader{
     padding:2em 0
 }
-
 

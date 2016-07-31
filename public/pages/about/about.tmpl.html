@@ -1,8 +1,52 @@
 
-<div class="main">
+<style>
+    .wrapper{
+        clear: both;
+    }
 
-    <h1>About</h1>
+    .wrapper img{
+        width:50%;
+        float:left;
+        padding-right: 1em;;
 
-    <modal type="'login'"></modal>
-    <login-cmp></login-cmp>
-</div>
+    }
+
+    .wrapper div{
+        float:left;
+    }
+    
+    @media (max-width:768px) {
+        .wrapper img{
+            width:100%;
+            padding:none;
+            padding-bottom:1em;
+        }
+    }
+
+</style>
+
+<section class="main">
+    <div class="subHeader">
+        <h2>About us</h2>
+    </div>
+    <div>
+        <div class="wrapper">
+            <img src="https://www.myvouchercodes.co.uk/the-code-word/wp-content/uploads/2013/02/supermarket-shopping.jpg">
+        </div>
+        <div>
+            <p>
+                Fresh, quality food is at the heart of what we do. As GrooCo partners, we want to know where our food comes from, how it’s been produced and what it contains.
+            </p>
+            <br><br>
+            <p>
+                It all starts with long-term relationships with our farmers and suppliers, and continues with our beliefs in championing British produce, supporting responsible sourcing, treating people fairly and treading lightly on the environment. This is the GrooCo Way.
+            </p>
+            <br>
+            <p>
+                But it doesn’t stop there. With your help in branch and online, our Community Matters scheme has donated £14 million to local charities chosen by you. The GrooCo Foundation is a partnership we created in 2005 to help improve the lives of the farm workers and smallholders who grow our produce in South Africa, Kenya and Ghana. The GrooCo Foundation is just one example of how we work in partnership with our suppliers to build sustainable relationships, helping our customers get the best possible food and drink.
+            </p>
+        </div>
+    </div>
+    <br>
+</section>
+<div id="map_canvas"></div>
