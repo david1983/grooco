@@ -26,7 +26,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                             }
 
                             var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
-                            console.log(map)
                             var marker = new google.maps.Marker({
                                 position: myLatlng,
                                 map: map,

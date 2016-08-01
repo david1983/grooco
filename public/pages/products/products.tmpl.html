@@ -1,8 +1,7 @@
-
 <section class="main">
-
     <div class="subHeader">
-    <h2>Products <span>{{}}</span></h2>
+    <h2 ng-if="!vm.search">Products</h2>
+    <h2 ng-if="vm.search">{{vm.products.length}} products found for "{{vm.search}}"</h2>
 </div>
     <spinner-css  ng-if="!vm.products"></spinner-css>
     <cards products="vm.products"></cards>

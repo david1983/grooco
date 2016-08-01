@@ -9,9 +9,9 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 }
             })
         })
-}).controller('categoriesCtrl', function(categories){
+}).controller('categoriesCtrl', ['categories', function(categories){
     
      categories.get({type: 'main'}).then(function(result){
        this.categories = result.data
      }.bind(this)).catch(function(err){console.log(err)})        
-})
+}])

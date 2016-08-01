@@ -70,7 +70,6 @@ function setGrid(cat, cols, ratingLimit) {
             row.push(small[0]);
             small.shift()
         } else {
-            console.log(n)
             if (typeof arr[n - 1] != 'undefined') {
 
                 if (arr[n - 1][0].size == 2&&row.length==0) {

@@ -17,7 +17,6 @@ app.component('cards', {
     controller: function ($sce,userSrvc,cartSrvc) {
 
         this.addToCart = function(product){
-            console.log(product)
             this.user = userSrvc.$getAuth();
             if(this.user==null) return this.modalState=true;
 

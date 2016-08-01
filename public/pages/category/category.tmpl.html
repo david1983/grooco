@@ -7,9 +7,10 @@
 <br>
 
 <section class="main">
-
-
+  <h2 ng-if="vm.category.subCat.length>0">Related categories</h2>
   <grid-items max="999" rating-limit="1.5" categories='vm.category.subCat'></grid-items>
   <spinner-css ng-if="!vm.products"></spinner-css>
+
+  <h2 ng-if="vm.products.length>0">Products in "{{vm.category.name | removeUnderscore}}"</h2>
   <cards products="vm.products"></cards>
 </section>

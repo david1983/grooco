@@ -16,8 +16,7 @@ app.directive('gridItem', function ($window) {
                     margin: margin + '%'
                 })
             }
-            scope.rerender()
-            scope.$watch('cols',function(newval,oldval){ console.log(newval)})
+            scope.rerender();
             $window.addEventListener('resize', function () {
                 scope.cols = ($window.innerWidth > 768) ? 4 : ($window.innerWidth > 450) ? 3: 1;
                 scope.rerender()

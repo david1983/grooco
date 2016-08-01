@@ -1,1 +1,110 @@
 $mobile: new-breakpoint(max-width 500px 4);
+
+//breakpoints
+$medium-screen: 20rem !default;
+$tablet-screen: 27rem !default;
+$large-screen: 50rem !default;
+
+//colors
+$dark-gray: #333 !default;
+$light-gray: #DDD !default;
+$medium-gray: #999 !default;
+
+
+$gray-darker:               #444444;
+$gray-dark:                 #696969;
+$gray:                      #999999;
+$gray-light:                #cccccc;
+$gray-lighter:              #ececec;
+$gray-lightest:             lighten($gray-lighter,4%);
+
+//base
+$base-border-color: gainsboro !default;
+$base-border-radius: 3px !default;
+$base-background-color: white !default;
+$base-spacing: 1.5em !default;
+$base-line-height: 1.5em !default;
+$base-spacing: 0.5em !default;
+$base-font-color: $dark-gray !default;
+$action-color: #477DCA !default;
+
+
+
+
+//breadcrumbs
+$breadcrumb-border-color: $base-border-color;
+$breadcrumb-border: 1px solid $breadcrumb-border-color;
+$breadcrumb-height: $base-spacing * 1.5;
+$breadcrumb-arrow-color: $breadcrumb-border-color;
+$breadcrumb-background: $base-background-color;
+$breadcrumb-inactive-hover-color: $breadcrumb-background;
+$breadcrumb-color: $medium-gray;
+$breadcrumb-color-hover: $action-color;
+$breadcrumb-color-active: $breadcrumb-color;
+
+//footer
+$footer-background: desaturate(darken($action-color, 20%), 30%);
+$footer-color: white;
+$footer-link-color: transparentize($footer-color, 0.6);
+$footer-disclaimer-color: transparentize($footer-color, 0.6);
+
+//grid
+$grid-items-background: $base-background-color;
+$grid-item-background: desaturate($action-color, 30%);
+$grid-item-colors:
+        desaturate($action-color, 30%),
+        #3581A5,
+        #5FBEBE,
+        #98C79A,
+        #A7A891,
+        #BDCC97,
+        #979EA0;
+$grid-item-border-size: 9px;
+$grid-item-color: white;
+$grid-item-height: 14em;
+$grid-item-columns: 3;
+$grid-item-big-columns: 6;
+
+//modal
+$modal-padding: 3em;
+$modal-background: $base-background-color;
+$modal-close-color: $light-gray;
+$modal-image-height: 135px;
+$modal-image-width: $modal-image-height;
+$modal-trigger-image-width: 300px;
+
+//navbar
+$navigation-padding: 1em;
+$navigation-background: $dark-gray;
+$navigation-color: transparentize(white, 0.3);
+$navigation-color-hover: white;
+$navigation-height: 60px;
+$navigation-nav-button-background: $action-color;
+$navigation-nav-button-background-hover: lighten($navigation-background, 10%);
+$navigation-nav-button-border: 1px solid lighten($navigation-nav-button-background, 20%);
+$navigation-search-background: lighten($navigation-background, 5);
+$navigation-search-border: 1px solid darken($navigation-background, 5);
+$navigation-active-link-color: transparentize(white, 0.5);
+$navigation-submenu-padding: 1em;
+$navigation-submenu-width: 20em;
+$horizontal-bar-mode: $large-screen;
+
+//panel
+$sliding-panel-border-color: $dark-gray;
+$sliding-panel-background: lighten($sliding-panel-border-color, 5%);
+$sliding-panel-color: #fff;
+$sliding-panel-border: 1px solid $sliding-panel-border-color;
+$sliding-panel-background-hover: $action-color;
+$sliding-panel-color-hover: #fff;
+$sliding-panel-background-focus: lighten($sliding-panel-background, 5%);
+$panel-width: 260px;
+
+//tables
+$table-border-color: $base-border-color;
+$table-border: 1px solid $table-border-color;
+$table-background: lighten($table-border-color, 12%);
+$table-header-background: lighten($table-background, 10%);
+$table-hover-background: darken($table-background, 5%);
+$table-stripe-background: darken($table-background, 2%);
+$table-stripe-background-hover: darken($table-stripe-background, 5%);
+$table-padding: 0.75em 1em;

@@ -1,4 +1,5 @@
-app.service('userSrvc', function ($rootScope, $firebaseAuth, $firebaseObject,$cookies, $firebaseArray,$q) {
+app.service('userSrvc', ['$rootScope','$firebaseAuth','$firebaseObject','$cookies','$firebaseArray','$q',
+    function ($rootScope, $firebaseAuth, $firebaseObject,$cookies, $firebaseArray,$q) {
     var usrSrvc = $firebaseAuth();
 
     usrSrvc.$onAuthStateChanged(function() {
@@ -58,4 +59,4 @@ app.service('userSrvc', function ($rootScope, $firebaseAuth, $firebaseObject,$co
 
 
     return usrSrvc;
-})
+}])
