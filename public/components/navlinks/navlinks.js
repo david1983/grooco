@@ -10,6 +10,7 @@ app.component("navLinks", {
         }.bind(this),true)
     },
     bindings:{
-        showLogout: '<'
+        showLogout: '<',
+        modalState: '='
     }
 });

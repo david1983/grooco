@@ -91,7 +91,10 @@
 }
 
 section.main{
-    @include outer-container(80%); 
+    @include outer-container(95%);
+    @include media(50rem){
+        @include outer-container(70%);
+    }
 }
 
 .subHeader{

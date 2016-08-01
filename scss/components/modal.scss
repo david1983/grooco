@@ -21,6 +21,8 @@
   $modal-trigger-image-width: 300px;
   button{
     @include button(#40526b);
+    padding:1em;
+    min-width:100%;
   }
 
   label {

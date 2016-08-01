@@ -6,7 +6,6 @@
   <li class="nav-link" ng-class="{'active-nav-item': $ctrl.state.name == 'about'}"><a ui-sref="about">About Us</a></li>
   <li class="nav-link" ng-class="{'active-nav-item': $ctrl.state.name == 'contacts'}"><a ui-sref="contacts">Contact</a></li>
   <li class="nav-link" ng-show="$ctrl.loggedIn && $ctrl.showLogout" ng-click="$ctrl.signOut()"><a>Log out</a></li>
-  <li class="nav-link" ng-show="!$ctrl.loggedIn" ng-click="$ctrl.modalState=true"><a>Log in</a></li>
+  <li class="nav-link" ng-show="!$ctrl.loggedIn" ng-click="$ctrl.modalState=true"><a href="javascript:void(0)">Log in</a></li>
 
 </ul>
-<modal type="'login'" state="$ctrl.modalState"></modal>
