@@ -26,16 +26,23 @@
                     <div>
                         <img ng-src="{{item.image}}"/>
                         <h3>{{item.name}}</h3>
-
-
                     </div>
                 </td>
                 <td><h3>{{item.price}}</h3></td>
                 <td><input type="number" ng-model="item.qty" ng-change="vm.cart.$save(item)"/></td>
                 <td><i class="fa fa-times" ng-click="vm.cart.remove(item)"></i></td>
             </tr>
+            <tr style="font-size: 1.5em;text-align:right">
+                <td colspan="2">Total:</td>
+                <td>{{vm.total | currency: '£'}}</td>
+                <td></td>
+            </tr>
             </tbody>
         </table>
-
+        <br>
+        <div>
+            <button class="btn" ui-sref="payment({amount: vm.total})">Go to pay</button>
+        </div>
+        <br>
     </div>
 </section>

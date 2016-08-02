@@ -93,7 +93,7 @@ img {
   border: 1px solid #eee;
   //cursor:pointer;
   transition:0.25s all!important;
-  @include media(90rem){
+  @include media($large-screen){
     &:hover {
       transform: scale(1.1) translateY(-5%) ;
       .card__image {
@@ -155,6 +155,8 @@ img {
   line-height: 1.5;
 }
 
+
+
   .card__actions{
     display: flex;
     flex-direction: row;
@@ -180,12 +182,18 @@ img {
       font-size:1.8em;
       display: flex;
     }
+
+
     .qty{
       display: flex;
       flex-direction: column;
       align-items: center;
       .fa{
+        padding: 0.2rem 1.2rem;
         font-size:1.5rem;
+        &:hover,&:active{
+          background: $gray-lightest;
+        }
       }
       input[type="number"]{
         border: 1px solid $gray-lighter;

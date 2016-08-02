@@ -6,9 +6,9 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 content: {
                     templateUrl: "/pages/category/category.tmpl.html",
                     controller: 'categoryCtrl as vm'
-
                 }
-            })
+            }),
+            data:{pageTitle: 'GrooCo - Category'}
         })
 }).controller('categoryCtrl', ['$stateParams','categories','products',
     function ($stateParams, categories, products) {

@@ -12,7 +12,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     templateUrl: "/pages/home/home.tmpl.html",
                     controller: 'homeCtrl as vm'
                 }
-            })
+            }),
+            data:{pageTitle: 'GrooCo - Home'}
         })
 }).controller('homeCtrl', ['categories',
     function(categories){

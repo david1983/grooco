@@ -19,7 +19,8 @@ app.component('cards', {
         this.addToCart = function(product){
             this.user = userSrvc.$getAuth();
             if(this.user==null) return this.modalState=true;
-
+            if(!product.userQty || product.userQty==0) return product.error = { msg: 'Quantity must be more than 0'}
+            product.error = false;
             var cart = cartSrvc(this.user.uid);
 
             cart.add(cart.item(product))

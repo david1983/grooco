@@ -7,12 +7,7 @@
 }
 
 .grid-items {
-
-  
   @include clearfix;
-
- 
-
   .grid-item {
     position:relative;
     background: $grid-item-background;

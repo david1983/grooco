@@ -8,7 +8,7 @@
           <div class="card__title">{{product.name}}</div>                  
           <p class="card__text" ng-bind-html="product.summaryHTML"></p>
 
-
+          <div class="error" ng-class="{'show': product.error}">{{product.error.msg}}</div>
           <br>
           <div class="card__actions">
             <div class="rates">
@@ -26,6 +26,7 @@
 <br>
 
           <button class="btn btn--block card__btn" ng-click="$ctrl.addToCart(product)">Add to cart</button>
+
         </div>
       </div>
     </li>

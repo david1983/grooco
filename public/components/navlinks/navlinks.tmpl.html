@@ -4,7 +4,6 @@
   <li class="nav-link" ng-class="{'active-nav-item': $ctrl.state.name == 'products'}"><a ui-sref="products">Products</a></li>
   <li class="nav-link" ng-show="$ctrl.hasCart" ng-class="{'active-nav-item': $ctrl.state.name == 'cart'}"><a ui-sref="cart">Cart</a></li>
   <li class="nav-link" ng-class="{'active-nav-item': $ctrl.state.name == 'about'}"><a ui-sref="about">About Us</a></li>
-  <li class="nav-link" ng-class="{'active-nav-item': $ctrl.state.name == 'contacts'}"><a ui-sref="contacts">Contact</a></li>
   <li class="nav-link" ng-show="$ctrl.loggedIn && $ctrl.showLogout" ng-click="$ctrl.signOut()"><a>Log out</a></li>
   <li class="nav-link" ng-show="!$ctrl.loggedIn" ng-click="$ctrl.modalState=true"><a href="javascript:void(0)">Log in</a></li>
 

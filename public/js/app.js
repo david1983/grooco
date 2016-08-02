@@ -34,7 +34,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                         })
                     },
                 }
-            })
+            }),
+            data:{pageTitle: 'GrooCo - About'}
         });
 })
 
@@ -49,4 +50,23 @@ angular.module('grooco')
             $rootScope.history.push(newObj)
             if($rootScope.history.length>limit) $rootScope.history.shift();
         });
-    }]);
+    }]).directive('title', ['$rootScope', '$timeout',
+    function($rootScope, $timeout) {
+        return {
+            link: function() {
+
+                var listener = function(event, toState) {
+                    console.log(toState.data)
+                    $timeout(function() {
+                        $rootScope.title = (toState.data && toState.data.pageTitle)
+                            ? toState.data.pageTitle
+                            : 'Default title';
+                        document.title = $rootScope.title
+                    });
+                };
+
+                $rootScope.$on('$stateChangeSuccess', listener);
+            }
+        };
+    }
+]);;

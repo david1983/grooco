@@ -1,0 +1,68 @@
+<section class="main" style="overflow:auto">
+<br><br>
+    <div class="container">
+        <div id="Checkout" class="inline">
+            <h1>Pay Invoice</h1>
+            <div class="card-row">
+                <span class="visa"></span>
+                <span class="mastercard"></span>
+                <span class="amex"></span>
+                <span class="discover"></span>
+            </div>
+            <form>
+                <div class="form-group">
+                    <label for="PaymentAmount">Payment amount</label>
+                    <div class="amount-placeholder">
+                        <span><b>{{vm.total| currency: '£'}}</b></span>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label or="NameOnCard">Name on card</label>
+                    <input id="NameOnCard" ng-model="vm.payment.name" class="form-control" type="text" maxlength="255">
+                    <div class="error" ng-class="{'show': vm.error.name}" ng-show="vm.error.name">{{vm.error.name}}</div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="CreditCardNumber">Card number</label>
+                    <input id="CreditCardNumber" ng-model="vm.payment.card" class="null card-image form-control" type="text">
+                    <div class="error" ng-class="{'show': vm.error.card}"  ng-show="vm.error.card">{{vm.error.card}}</div>
+                </div>
+                <br>
+                <div class="expiry-date-group form-group" style="padding-right:0.5em">
+                    <label for="ExpiryDate">Expiry date</label>
+                    <input id="ExpiryDate" ng-model="vm.payment.expiry" class="form-control" type="text" placeholder="MM / YY" maxlength="7">
+                    <div class="error" ng-class="{'show': vm.error.expiry}" ng-show="vm.error.expiry">{{vm.error.expiry}}</div>
+                </div>
+                <div class="security-code-group form-group">
+                    <label for="SecurityCode">Security code</label>
+                    <div class="input-container" >
+                        <input id="SecurityCode" ng-model="vm.payment.cv2" class="form-control" type="text" >
+                        <i id="cvc" class="fa fa-question-circle" ng-click="vm.helpCv2=!vm.helpCv2"></i>
+                    </div>
+                    <div class="error" ng-class="{'show': vm.error.cv2}" ng-show="vm.error.cv2">{{vm.error.cv2}}</div>
+                    <div ng-show="vm.helpCv2" class="cvc-preview-container two-card hide">
+                        <div class="amex-cvc-preview"></div>
+                        <div class="visa-mc-dis-cvc-preview"></div>
+                    </div>
+                </div>
+
+                <div class="zip-code-group form-group">
+                    <br>
+                    <label for="ZIPCode">Post code</label>
+                    <div class="input-container">
+                        <input id="ZIPCode" ng-model="vm.payment.postcode" class="form-control" type="text" maxlength="10">
+                    </div>
+                    <div class="error" ng-class="{'show': vm.error.postcode}" ng-show="vm.error.postcode">{{vm.error.postcode}}</div>
+                </div>
+                <br>
+                <button ng-click="vm.pay()" id="PayButton" class="btn btn-block btn-success submit-button" type="submit">
+                    <span class="submit-button-lock"></span>
+                    <span class="align-middle">Pay {{vm.total| currency: '£'}}</span>
+                </button>
+                <br>
+            </form>
+        </div>
+    </div>
+<br><br>
+</section>
