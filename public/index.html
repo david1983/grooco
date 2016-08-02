@@ -9,21 +9,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grooco Supermarket</title>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-    <link rel="stylesheet" href="bower_components/outdated-brwser/outdatedbrowser/outdatedbrowser.min.css">
     <script>
-        //     if('serviceWorker' in navigator ){
-        //                navigator.serviceWorker.register('/sw.js')
-        //                .then(()=>{
-        //                    console.log('yay sw registered')
-        //                }).catch((e)=>{
-        //                    console.log(e)
-        //                })
-        //            }
+//     if('serviceWorker' in navigator ){
+//                navigator.serviceWorker.register('/sw.js')
+//                .then(()=>{
+//                    console.log('yay sw registered')
+//                }).catch((e)=>{
+//                    console.log(e)
+//                })
+//            }
     </script>
 </head>
 
 <body>
-
+<!--[if IE]>
+<p class="browsehappy">
+    <h1>GrooCo Supermarket</h1>
+    <br>
+    You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+</p>
+<![endif]-->
 <div class="page">
     <title>{{title}}</title>
     <div ui-view="navbar"></div>
@@ -36,77 +41,51 @@
 <script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
 <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
 
-<script>
-    // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyAG1u29W1E_Y3ZXr2ynUyC3dhee3NlbI_M",
-        authDomain: "grooco-3a6e4.firebaseapp.com",
-        databaseURL: "https://grooco-3a6e4.firebaseio.com",
-        storageBucket: "grooco-3a6e4.appspot.com",
-    };
-    firebase.initializeApp(config);
+    <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAG1u29W1E_Y3ZXr2ynUyC3dhee3NlbI_M",
+    authDomain: "grooco-3a6e4.firebaseapp.com",
+    databaseURL: "https://grooco-3a6e4.firebaseio.com",
+    storageBucket: "grooco-3a6e4.appspot.com",
+  };
+  firebase.initializeApp(config);
 </script>
-<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-cookies.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
-<script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-cookies.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 
-<script src="/js/app.js"></script>
-<script src="/js/filters/removeUnderscore.js"></script>
-<script src="/pages/home/home.js"></script>
-<script src="/pages/products/products.js"></script>
-<script src="/pages/product/product.js"></script>
-<script src="/pages/categories/categories.js"></script>
-<script src="/pages/category/category.js"></script>
-<script src="/pages/payment/payment.js"></script>
-<script src="/pages/cart/cart.js"></script>
-<script src="/js/services/user.js"></script>
-<script src="/js/services/cartSrvc.js"></script>
-<script src="/js/services/firebase.js"></script>
-<script src="/js/services/categories.js"></script>
-<script src="/js/services/products.js"></script>
-<script src="/components/navlinks/navlinks.js"></script>
-<script src="/components/backImg/backImg.js"></script>
-<script src="/components/gridItem/gridItem.js"></script>
-<script src="/components/panel/panel.js"></script>
-<script src="/components/navbar/navbar.js"></script>
-<script src="/components/logoSvg/logoSvg.js"></script>
-<script src="/components/gridItems/gridItems.js"></script>
-<script src="/components/fadeInElement/fadeInElement.js"></script>
-<script src="/components/spinnerCss/spinnerCss.js"></script>
-<script src="/components/card/card.js"></script>
-<script src="/components/starRating/starRating.js"></script>
-<script src="/components/breadcrumbs/breadcrumbs.js"></script>
-<script src="/components/modal/modal.js"></script>
-<script src="/components/modal/login/login.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/filters/removeUnderscore.js"></script>
+    <script src="/pages/home/home.js"></script>
+    <script src="/pages/products/products.js"></script>
+    <script src="/pages/product/product.js"></script>
+    <script src="/pages/categories/categories.js"></script>
+    <script src="/pages/category/category.js"></script>
+    <script src="/pages/payment/payment.js"></script>
+    <script src="/pages/cart/cart.js"></script>
+    <script src="/js/services/user.js"></script>
+    <script src="/js/services/cartSrvc.js"></script>
+    <script src="/js/services/firebase.js"></script>
+    <script src="/js/services/categories.js"></script>
+    <script src="/js/services/products.js"></script>
+    <script src="/components/navlinks/navlinks.js"></script>
+    <script src="/components/backImg/backImg.js"></script>
+    <script src="/components/gridItem/gridItem.js"></script>
+    <script src="/components/panel/panel.js"></script>
+    <script src="/components/navbar/navbar.js"></script>
+    <script src="/components/logoSvg/logoSvg.js"></script>
+    <script src="/components/gridItems/gridItems.js"></script>
+    <script src="/components/fadeInElement/fadeInElement.js"></script>
+    <script src="/components/spinnerCss/spinnerCss.js"></script>
+    <script src="/components/card/card.js"></script>
+    <script src="/components/starRating/starRating.js"></script>
+    <script src="/components/breadcrumbs/breadcrumbs.js"></script>
+    <script src="/components/modal/modal.js"></script>
+    <script src="/components/modal/login/login.js"></script>
 
-<div id="outdated"></div>
-<script src="/bower_components/outdated-browser/outdatedbrowser/outdatedbrowser.min.js"></script>
-<script>
-    function addLoadEvent(func) {
-        var oldonload = window.onload;
-        if (typeof window.onload != 'function') {
-            window.onload = func;
-        } else {
-            window.onload = function() {
-                if (oldonload) {
-                    oldonload();
-                }
-                func();
-            }
-        }
-    }
-    //call plugin function after DOM ready
-    addLoadEvent(function(){
-        outdatedBrowser({
-            bgColor: '#f25648',
-            color: '#ffffff',
-            lowerThan: 'transform',
-            languagePath: '/bower_components/outdated-browser/outdatedbrowser/lang/en.html'
-        })
-    });
-</script>
 </body>
 
 </html>
