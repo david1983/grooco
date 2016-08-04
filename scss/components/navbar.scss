@@ -24,10 +24,16 @@ header.navigation {
     max-height: $navigation-height;
     padding-left: $navigation-padding;
     padding-right: 2em;
+    display: none;
+    @include media($horizontal-bar-mode) {
+      display:block;
+    }
 
     logo-svg {
       max-height: $navigation-height;
       padding: 0.4em 0;
+      max-width:3.7em;
+
     }
   }
 
@@ -259,8 +265,8 @@ header.navigation {
 
 
   .user-actions{
-    background: #505050;
-    clear: both;
+//    background: #505050;
+//    clear: both;
     display: block;
     height: $navigation-height;
     @include media($horizontal-bar-mode) {
@@ -271,7 +277,6 @@ header.navigation {
 
     .cart-icon{
       float:left;
-
       font-size:1.5em;
 
       a{
@@ -280,7 +285,9 @@ header.navigation {
         }
         color: $navigation-color;
         display:inline-block;
-
+        &:hover{
+          color: $gray-lighter;
+        }
         width:100%;
         height:100%;
       }
@@ -288,7 +295,7 @@ header.navigation {
     .user-img{
       margin:0;
       display: block;
-      float:right;
+      float:left;
       height:100%;
       position:relative;
       img{
@@ -394,12 +401,23 @@ header.navigation {
   border: 1px solid #999;
   z-index:99999;
   position:absolute;
-  top:10px;right:0;
+  top:10px;left:0;
   width:0;
   height:0;
   background:white;
   opacity:0;
   transition:0.5s all;
+
+  .closebtn{
+    cursor:pointer;
+    position:absolute;
+    top:5px;right:5px;
+    font-size:1.2rem;
+    color: $gray-dark;
+    &:hover{
+      color: $gray-light;
+    }
+  }
   .modal-content{
     overflow:hidden;
     width:100%;
@@ -418,7 +436,7 @@ header.navigation {
   display:block;
   height:120px;
   width:400px;
-  right: 10px;
+  left: 10px;
   opacity:1;
 }
 

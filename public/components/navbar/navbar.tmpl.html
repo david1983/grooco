@@ -1,7 +1,7 @@
 <header class="navigation" role="banner">
   <div class="navigation-wrapper">
     <a ui-sref="home" class="logo" >
-       <logo-svg style="max-width:3.7em;display: block"/>
+       <logo-svg></logo-svg>
       <!--<img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_square.png" alt="Logo Image">-->
     </a>
     <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu" ng-click="$ctrl.panelState=1"><i class="fa fa-bars"></i></a>
@@ -12,14 +12,13 @@
 
 
     <div class="user-actions" ng-if="$ctrl.user">
+        <div class="user-img" >
+            <img ng-src="{{$ctrl.user.providerData[0].photoURL}}" ng-click="$ctrl.show=!$ctrl.show" />
+        </div>
       <div class="cart-icon" >
         <a ui-sref="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-
       </div>
 
-      <div class="user-img" >
-        <img ng-src="{{$ctrl.user.providerData[0].photoURL}}" ng-click="$ctrl.show=!$ctrl.show" />
-      </div>
     </div>
 
     <div class="navigation-tools">
@@ -37,6 +36,7 @@
 </header>
 
 <div class="mini-modal" ng-class="{'show': $ctrl.show}">
+    <i class="fa fa-times closebtn" ng-click="$ctrl.show=false;"></i>
   <div class="modal-content" >
     <img ng-src="{{$ctrl.user.providerData[0].photoURL}}" />
     <div style="text-align: right">
