@@ -24,9 +24,16 @@ header.navigation {
     max-height: $navigation-height;
     padding-left: $navigation-padding;
     padding-right: 2em;
-    display: none;
+    position:absolute;
+    top:2em;left:50%;
+    transform: translate3d(-50%,-50%,0);
+
     @include media($horizontal-bar-mode) {
+      position:relative;
       display:block;
+      top:auto;left:auto;
+      transform: translate3d(0,0,0);
+
     }
 
     logo-svg {
@@ -263,8 +270,8 @@ header.navigation {
   }
 
 
-
   .user-actions{
+    z-index:999;
 //    background: #505050;
 //    clear: both;
     display: block;
@@ -278,7 +285,9 @@ header.navigation {
     .cart-icon{
       float:left;
       font-size:1.5em;
-
+      @include media($horizontal-bar-mode) {
+        float:right;
+      }
       a{
         i{
           padding:0.6em;
@@ -298,6 +307,9 @@ header.navigation {
       float:left;
       height:100%;
       position:relative;
+      @include media($horizontal-bar-mode) {
+        float:right;
+      }
       img{
         cursor:pointer;
         padding:0.3rem;

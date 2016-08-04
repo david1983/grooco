@@ -5,8 +5,11 @@
       <div fade-in-element  class="card">
         <div class="card__image" back-img="product.image"></div>
         <div class="card__content">
-          <div class="card__title">{{product.name}}</div>                  
-          <p class="card__text" ng-bind-html="product.summaryHTML"></p>
+          <div class="card__title">{{product.name}}</div>
+          <a href="javascript:void(0)" ng-click="product.showdesc=!product.showdesc">
+              {{(product.showdesc) ? 'Hide description' : 'Show description'}}
+          </a>
+          <p class="card__text" ng-bind-html="product.summaryHTML" ng-show="product.showdesc"></p>
 
           <div class="error" ng-class="{'show': product.error}">{{product.error.msg}}</div>
           <br>
