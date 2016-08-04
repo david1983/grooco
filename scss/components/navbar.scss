@@ -408,6 +408,12 @@ header.navigation {
   opacity:0;
   transition:0.5s all;
 
+  @include media($horizontal-bar-mode) {
+    left:auto;
+    right:0!important;
+
+  }
+
   .closebtn{
     cursor:pointer;
     position:absolute;
@@ -438,6 +444,10 @@ header.navigation {
   width:400px;
   left: 10px;
   opacity:1;
+  @include media($horizontal-bar-mode) {
+    left:auto;
+    right:10px!important;
+  }
 }
 
 .mini-modal-overlay{
