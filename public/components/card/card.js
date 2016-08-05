@@ -22,9 +22,21 @@ app.component('cards', {
             if(!product.userQty || product.userQty==0) return product.error = { msg: 'Quantity must be more than 0'}
             product.error = false;
             var cart = cartSrvc(this.user.uid);
+            cart.$loaded().then(function(){
+                var isIn = false;
+                for(var i=0;i<cart.length;i++){
+                    if(product.name == cart[i].name){
+                        cart[i].qty += product.userQty;
+                        cart.$save(i)
+                        isIn = true;
+                    }
+                }
+                if(!isIn){
+                    cart.add(cart.item(product))
+                }
+                delete product.userQty
+            })
 
-            cart.add(cart.item(product))
-            delete product.userQty
         }
 
         this.changeQty = function(product, operator){
