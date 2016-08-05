@@ -28,6 +28,7 @@ app.service('userSrvc', ['$rootScope','$firebaseAuth','$firebaseObject','$cookie
 
         return new $q(function(resolve, reject){
             loginWrapper(options).then(function(fUser){
+                if(typeof fUser.user == 'undefined') fUser.user = fUser
                 var ref= firebase.database().ref('profiles/'+fUser.user.uid)
                 var profile = $firebaseObject(ref)
 
@@ -36,6 +37,7 @@ app.service('userSrvc', ['$rootScope','$firebaseAuth','$firebaseObject','$cookie
                 profile.email   = fUser.user.email;
                 profile.name    = fUser.user.displayName;
                 profile.$bindTo($rootScope,'profile')
+                resolve(fUser);
             }).catch(function(err){
                 reject(err)
             })

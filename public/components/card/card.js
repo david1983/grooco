@@ -14,7 +14,7 @@ function convertStrTohtml(txt){
 
 app.component('cards', {
     templateUrl: '/components/card/card.tmpl.html',
-    controller: function ($sce,userSrvc,cartSrvc) {
+    controller: function ($sce,userSrvc,cartSrvc,$timeout) {
 
         this.addToCart = function(product){
             this.user = userSrvc.$getAuth();
@@ -34,6 +34,10 @@ app.component('cards', {
                 if(!isIn){
                     cart.add(cart.item(product))
                 }
+                product.success = "product added to the cart"
+                $timeout(function(){
+                    product.success = false
+                },2000)
                 delete product.userQty
             })
 

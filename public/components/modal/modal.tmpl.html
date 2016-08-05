@@ -1,10 +1,10 @@
 
 <div class="modal">
     <input class="modal-state" id="modal-1" ng-model="$ctrl.state" type="checkbox" />
-    <div class="modal-fade-screen" ng-click="$ctrl.state=false">
-        <div class="modal-inner" >
+    <div class="modal-fade-screen" ng-show="$ctrl.state" ng-click="$ctrl.state=false"></div>
+        <div class="modal-inner"  ng-class="{'show': $ctrl.state==true}">
             <div class="modal-close" ng-click="$ctrl.state=false"></div>
-            <login-cmp ng-if="$ctrl.type=='login'"></login-cmp>
+            <login-cmp ng-if="$ctrl.type=='login'" state="$ctrl.state" reset="$ctrl.state"></login-cmp>
             <div ng-if="!$ctrl.type">
                 <h1>Modal Title</h1>
                 <p class="modal-intro">Intro text lorem ipsum dolor sit ametm, quas, eaque facilis aliquid cupiditate tempora cumque ipsum accusantium illo modi commodi  minima.</p>
@@ -12,5 +12,5 @@
             </div>
 
         </div>
-    </div>
+
 </div>

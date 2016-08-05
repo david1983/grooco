@@ -26,8 +26,9 @@
               <i class="fa fa-angle-down" aria-hidden="true" ng-click="$ctrl.changeQty(product,'-')"></i>
             </div>
           </div>
-<br>
 
+          <div class="success" ng-class="{'show':product.success}" ng-show="product.success">{{product.success}}</div>
+            <br>
           <button class="btn btn--block card__btn" ng-click="$ctrl.addToCart(product)">Add to cart</button>
 
         </div>

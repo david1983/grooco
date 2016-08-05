@@ -3,8 +3,22 @@
 @import "../vars";
 .modal {
 
+  input{
+    width:100%;
+    margin: 0.5rem 0;
+    padding:1em;
+    border: 1px solid $gray-light;
+    border-radius:5px;
+    &.wrong{
+      border: 1px solid red;
+    }
+  }
+
+
+
   button{
     cursor:pointer;
+    margin: 0.5rem 0;
     padding:1em;
     min-width:100%;
     border: none;
@@ -52,7 +66,7 @@
     opacity: 0;
     padding-top: 0.6em;
     text-align: left;
-    transition: opacity 0.25s ease;
+    transition: opacity 0.5s ease;
     visibility: hidden;
     z-index: 99999999999;
 
@@ -94,6 +108,12 @@
   }
 
   .modal-inner {
+
+    z-index: 0;
+    position:absolute;
+    top:-50%;
+    left:50%;
+    transform: translate3d(-50%,-50%,0);
     background: $modal-background;
     border-radius: $base-border-radius;
     margin: auto;
@@ -101,13 +121,23 @@
     max-height: 95%;
     overflow: auto;
     padding: $modal-padding / 2;
-    position: relative;
+    opacity:0;
     transition: opacity 0.25s ease;
-    width: 95%;
+    width: 98%;
+
+    &.show{
+      z-index: 99999999999!important;
+      top:50%;
+      opacity:1;
+    }
 
     @include media($medium-screen) {
       max-height: 70%;
       padding: $modal-padding;
+      width: 95%;
+    }
+
+    @include media($tablet-screen) {
       width: 60%;
     }
 
@@ -149,6 +179,12 @@
       }
     }
   }
+
+
+  ,show{
+  opacity: 1;
+  visibility: visible;
+}
 
   .modal-state:checked + .modal-fade-screen {
     opacity: 1;

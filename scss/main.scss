@@ -41,6 +41,22 @@
     }
 }
 
+
+.success{
+  margin:0.2em 0;
+  opacity: 0;
+  transition: 0.5s all;
+  background: #55b947;
+  color:#fff;
+  padding:0.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  &.show{
+    opacity:1;
+  }
+}
+
+
 .page{
     overflow:hidden;
     display:flex;
