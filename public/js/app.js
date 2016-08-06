@@ -49,6 +49,7 @@ angular.module('grooco')
 
             $rootScope.history.push(newObj)
             if($rootScope.history.length>limit) $rootScope.history.shift();
+            $(document).ready(function(){window.scrollTo(0, 0);})
         });
     }]).directive('title', ['$rootScope', '$timeout',
     function($rootScope, $timeout) {
@@ -60,7 +61,7 @@ angular.module('grooco')
                     $timeout(function() {
                         $rootScope.title = (toState.data && toState.data.pageTitle)
                             ? toState.data.pageTitle
-                            : 'Default title';
+                            : 'Grooco';
                         document.title = $rootScope.title
                     });
                 };

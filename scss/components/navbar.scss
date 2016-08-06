@@ -3,7 +3,7 @@
 @import "../vars";
 
 header.navigation {
-
+  position:fixed;
   overflow:hidden;
   background-color: $navigation-background;
   border-bottom: 1px solid darken($navigation-background, 10);
@@ -454,6 +454,7 @@ header.navigation {
   display:block;
   height:120px;
   width:400px;
+  max-width:100%;
   left: 10px;
   opacity:1;
   @include media($horizontal-bar-mode) {
