@@ -11,7 +11,7 @@
             <h3>You need to login to access the cart</h3>
             <button ng-click="vm.modalState=true">Login Now</button>
         </div>
-        <table class="tables">
+        <table class="tables cart-desktop" >
             <thead>
             <tr>
                 <th>Product</th>
@@ -39,6 +39,25 @@
             </tr>
             </tbody>
         </table>
+
+        <div  ng-repeat="item in vm.cart" class="cart-mobile" >
+            <img ng-src="{{item.image}}">
+            <h3>{{item.name}}</h3>
+            <br>
+            <div class="product-info">
+                <div class="price">
+                    <label>Price</label>
+                    <br><br>
+                    <h2>{{item.price}}</h2>
+                </div>
+                <div class="qty">Quantity <br><br><input type="number" ng-model="item.qty" ng-change="vm.cart.$save(item)"/><br></div>
+            </div>
+            <button class="btn" ng-click="vm.cart.remove(item)"><i class="fa fa-times" ></i> Remove</button>
+        </div>
+        <div class="cart-mobile" style="text-align: right">
+            <h2>Total: {{vm.total | currency: '£'}}</h2>
+        </div>
+
         <br>
         <div>
             <button class="btn" ui-sref="payment({amount: vm.total})">Go to pay</button>
