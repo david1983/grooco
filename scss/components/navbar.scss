@@ -346,13 +346,17 @@ header.navigation {
   // Search bar
 
   .search-bar {
-    $search-bar-border-color: $base-border-color;
+    $search-bar-border-color:$dark-gray;
     $search-bar-border: 1px solid $search-bar-border-color;
-    $search-bar-background: lighten($search-bar-border-color, 10%);
-
+    $search-bar-background: darken($search-bar-border-color, 5%);
+    background:  $search-bar-background;
     float: left;
     padding: 0.85em 0.85em 0.7em 0.6em;
     width: 100%;
+
+    @include media($large-screen){
+      background: none;
+    }
 
     form {
       position: relative;
@@ -369,6 +373,9 @@ header.navigation {
         padding: 0.5em 0.8em;
         width: 100%;
 
+        @include placeholder {
+          color: $navigation-color;
+        }
         @include media($horizontal-bar-mode) {
           width: 100%;
         }
@@ -384,6 +391,7 @@ header.navigation {
         position: absolute;
         right: 0.3em;
         top: 0.3em;
+        color: $navigation-color;
 
         img {
           height: 12px;

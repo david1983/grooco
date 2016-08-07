@@ -2,15 +2,6 @@ app.component('gridItems', {
     templateUrl: '/components/gridItems/gridItems.tmpl.html',
     controller: function ($window, $timeout) {
         this.cols = ($window.innerWidth > 768) ? 4 : ($window.innerWidth > 450) ? 3: 1;
-        this.randomImg = function (arr) {
-            if (!arr) return '';
-            var idx = Math.floor(Math.random() * arr.length - 1) + 0
-            if (arr[idx]) {
-                return arr[idx]
-            } else {
-                return '';
-            }
-        }
 
         this.$onChanges = function (changesObj) {
             if (changesObj.categories && typeof changesObj.categories.currentValue != 'undefined') {
@@ -70,24 +61,19 @@ function setGrid(cat, cols, ratingLimit) {
             row.push(small[0]);
             small.shift()
         } else {
-            if (typeof arr[n - 1] != 'undefined') {
-
-                if (arr[n - 1][0].size == 2&&row.length==0) {
-                    row.push(small[0]);
-                    small.shift()
-                } else {
-                    row.push(big[0]);
-                    big.shift()
-                }
-
-            } else {
-                row.push(big[0]);
+            n++;
+            console.log(n)
+            if(n%2==0){
+                row.push(small[0])
+                small.shift()
+            }else{
+                row.push(big[0])
                 big.shift()
-
             }
 
-
         }
+
+
 
 
     }

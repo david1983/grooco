@@ -5,17 +5,15 @@
 .bullets {
   $base-line-height: 1.5em !default;
   $action-color: #477DCA !default;
-  $dark-gray: #333 !default;
-  $base-font-color: $dark-gray !default;
+  $base-font-color: $gray-dark !default;
   $icon-bullet-size: 3.5em;
-
   display: flex;
   flex-wrap: wrap;
   margin: 1em;
   margin-bottom: $base-line-height;
   overflow: auto;
   padding: 0;
-
+  color: $gray-dark;
 
 
   .bullet {
@@ -65,7 +63,7 @@
   }
 
   p {
-    color: $base-font-color;
+    color: $gray-dark;
     line-height: $base-line-height;
   }
 

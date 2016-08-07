@@ -6,7 +6,7 @@ $tablet-screen: 27rem !default;
 $large-screen: 50rem !default;
 
 //colors
-$dark-gray: #333 !default;
+$dark-gray: #008080 !default;
 $light-gray: #DDD !default;
 $medium-gray: #999 !default;
 
@@ -26,7 +26,7 @@ $base-spacing: 1.5em !default;
 $base-line-height: 1.5em !default;
 $base-spacing: 0.5em !default;
 $base-font-color: $dark-gray !default;
-$action-color: #477DCA !default;
+$action-color: $dark-gray !default;
 
 
 
@@ -43,7 +43,7 @@ $breadcrumb-color-hover: $action-color;
 $breadcrumb-color-active: $breadcrumb-color;
 
 //footer
-$footer-background: desaturate(darken($action-color, 20%), 30%);
+$footer-background: darken($dark-gray, 10%);
 $footer-color: white;
 $footer-link-color: transparentize($footer-color, 0.6);
 $footer-disclaimer-color: transparentize($footer-color, 0.6);
