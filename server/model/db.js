@@ -27,7 +27,7 @@ const db = {
                 if(err) return reject(err)
                 var collection = db.collection(collectionName);
                 // Find some documents 
-                collection.find(obj).toArray(function (err, docs) {
+                collection.find(obj).limit(50).toArray(function (err, docs) {
                     if(err) return reject(err)                    
                     resolve(docs)
                     db.close();
