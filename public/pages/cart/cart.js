@@ -19,8 +19,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             this.user = user
             this.cart = cartSrvc(user.uid)
 
-
-
             this.cart.$watch(function(){
                 if(typeof this.cart == 'undefined') return;
                 this.total = this.cart.reduce(function(a,i){

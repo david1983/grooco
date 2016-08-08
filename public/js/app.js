@@ -1,3 +1,13 @@
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyAG1u29W1E_Y3ZXr2ynUyC3dhee3NlbI_M",
+    authDomain: "grooco-3a6e4.firebaseapp.com",
+    databaseURL: "https://grooco-3a6e4.firebaseio.com",
+    storageBucket: "grooco-3a6e4.appspot.com"
+};
+firebase.initializeApp(config);
+
+// the defaultRoute Object is used to define the default view composed by Header, Content, Footer
 var defaultRoute = {
     navbar: { templateUrl: "/components/header/header.tmpl.html" },
     content: {
@@ -6,12 +16,17 @@ var defaultRoute = {
     footer: { templateUrl: "/components/footer/footer.tmpl.html" },
 }
 
+
 var app = angular.module('grooco', ['ui.router','ngAnimate','firebase','ngCookies']);
+
 app.config(function ($stateProvider, $urlRouterProvider) {
+
     $urlRouterProvider.otherwise("/");
+
     $stateProvider
         .state('about', {
             url: "/about",
+            // Object.assign is used to extend the defaultRoute with custom params.
             views: Object.assign(defaultRoute, {
                 content: {
                     templateUrl: "/pages/about/about.tmpl.html",
@@ -32,7 +47,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                                 title: 'My Place!'
                             });
                         })
-                    },
+                    }
                 }
             }),
             data:{pageTitle: 'GrooCo - About'}
