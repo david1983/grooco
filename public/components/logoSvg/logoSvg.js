@@ -1,3 +1,3 @@
 app.component('logoSvg',{
-    templateUrl: '/components/logoSvg/logoSvg.tmpl.html'
+    templateUrl: '/components/logoSvg/logo2.tmpl.html'
 })
