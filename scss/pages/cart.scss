@@ -1,0 +1,48 @@
+
+.cart-mobile{
+
+  text-align: center;
+  margin:0.5em;
+  padding:0.5em;
+  border:1px solid $gray-lighter;
+  box-shadow: 0 0 20px -10px $gray;
+  & .product-info{
+    background: red;
+
+    & .price{
+      float:left;
+      width:40%;
+    }
+    & .qty{
+      float:left;
+      width:60%;
+    }
+  }
+  input{
+    width:60%;
+    font-size:1.5em;
+    padding:0.2em;
+  }
+
+  .btn{
+    margin:1em 0;
+  }
+
+  @include media($large-screen){
+    display:none
+  }
+  @include media($tablet-screen){
+    display:none
+  }
+}
+
+
+.cart-desktop{
+  display:none;
+  @include media($large-screen){
+    display:table
+  }
+  @include media($tablet-screen){
+    display:table
+  }
+}
