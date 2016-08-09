@@ -19,12 +19,10 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             postcode: ''
         }
         this.error = {}
-
         userSrvc.$onAuthStateChanged(function(user) {
             if (user) {
                 this.user = user
                 this.cart = cartSrvc(user.uid)
-
                 this.cart.$watch(function(){
                     if(typeof this.cart == 'undefined') return;
                     this.total = this.cart.reduce(function(a,i){
@@ -38,9 +36,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             } else {
                 console.log("Signed out");
             }
-
         }.bind(this));
-
         this.pay = function(){
             var isOk = true;
             for(k in this.payment){
@@ -52,5 +48,4 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
             if(isOk) alert('We are sorry but the payment feature is not yet implemented')
         }
-
     }])

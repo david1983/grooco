@@ -1,21 +1,10 @@
 <div class="hero">
   <img src="/images/hero.jpg" id="bg" alt="Hero image">
   <div class="hero-content" style=" max-width: 15em;text-align: center">
-      <style>
-          @font-face {
-              font-family: LemonMilk;
-              src: url("/fonts/LemonMilk.otf") format("opentype");
-          }
-      </style>
     <logo-svg style="margin:auto;display: block" ></logo-svg>
     <h1 style="text-shadow: 0 0 3px black;font-family: 'LemonMilk', sans-serif;font-size: 2.5em;">GrooCo</h1>
-    <!--<img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_square.png" alt="Logo Image"
-      class="hero-logo">
-      -->
   </div>
 </div>
-
-
 
 <section class="main">
 
@@ -55,7 +44,10 @@
   <div class="subHeader">
   <h2>Top Categories</h2>
 </div>
+    <!--
+       The grid-items component expects the categories as a property , the max number of elements to be rendered
+       and the rating limit which is a threshold that is used to define the dimension of the category item,
+       in this case categories with rating more than 1.5 willbe of class "big-item"
+   -->
   <grid-items max="12" rating-limit="2.3" categories="vm.categories"></grid-items>
-
-
 </section>

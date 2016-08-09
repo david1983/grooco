@@ -19,10 +19,9 @@ app.component('gridItems', {
     bindings: {
         ratingLimit: '<',
         categories: '<',
-        max: '<',
+        max: '<'
     }
 })
-
 
 function sortArrByVal(arr, val_name) {
     return arr.sort(function (a, b) {
@@ -32,7 +31,6 @@ function sortArrByVal(arr, val_name) {
         if (a[val_name] < b[val_name]) {
             return -1;
         }
-        // a must be equal to b
         return 0;
     })
 }
@@ -70,12 +68,7 @@ function setGrid(cat, cols, ratingLimit) {
                 row.push(big[0])
                 big.shift()
             }
-
         }
-
-
-
-
     }
     if (row.length > 0) arr.push(row)
     return arr;

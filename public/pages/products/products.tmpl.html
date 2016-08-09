@@ -3,6 +3,8 @@
     <h2 ng-if="!vm.search">Products</h2>
     <h2 ng-if="vm.search">{{vm.products.length}} products found for "{{vm.search}}"</h2>
 </div>
+    <!-- When the products are not loaded shows a spinner to the user-->
     <spinner-css  ng-if="!vm.products"></spinner-css>
+    <!-- the cards component takes the products list as a property -->
     <cards products="vm.products"></cards>
 </section>

@@ -7,13 +7,8 @@
       <a fade-in-element ui-sref="category({name: v.name, sub:0})" class="grid-item fade-in-element" style="width:100%" ng-if="$index<$ctrl.max"
       back-img="v.imgs">
         <div class="grad"></div>
-
         <h1>{{v.name | removeUnderscore}}</h1>
-        <!--<p>
-          <span ng-repeat="(sk,sv) in v " ng-if="$index<2"> {{sk| removeUnderscore}}</span>
-        </p>-->
       </a>
     </div>
-
   </div>
 </div>

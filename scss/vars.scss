@@ -1,3 +1,4 @@
+
 $mobile: new-breakpoint(max-width 500px 4);
 
 //breakpoints
@@ -9,7 +10,6 @@ $large-screen: 50rem !default;
 $dark-gray: #3986c0 !default;
 $light-gray: #DDD !default;
 $medium-gray: #999 !default;
-
 
 $gray-darker:               #444444;
 $gray-dark:                 #696969;
@@ -27,9 +27,6 @@ $base-line-height: 1.5em !default;
 $base-spacing: 0.5em !default;
 $base-font-color: $dark-gray !default;
 $action-color: $dark-gray !default;
-
-
-
 
 //breadcrumbs
 $breadcrumb-border-color: $base-border-color;

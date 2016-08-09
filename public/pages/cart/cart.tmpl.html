@@ -7,7 +7,7 @@
 
     <spinner-css  ng-if="!vm.cart"></spinner-css>
     <div ng-if="vm.cart">
-        <div ng-if="vm.cart.erro">
+        <div ng-if="vm.cart.error">
             <h3>You need to login to access the cart</h3>
             <button ng-click="vm.modalState=true">Login Now</button>
         </div>

@@ -13,7 +13,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 }).controller('cartCtrl', ['$rootScope','$stateParams','userSrvc','cartSrvc',
     function ($rootScope,$stateParams,userSrvc, cartSrvc) {
 
-
     userSrvc.$onAuthStateChanged(function(user) {
         if (user) {
             this.user = user
@@ -32,9 +31,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         } else {
             console.log("Signed out");
         }
-
     }.bind(this));
-
-
 
 }])

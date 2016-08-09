@@ -4,5 +4,11 @@
     <div class="subHeader">
     <h2>Categories</h2>
 </div>
+    <!--
+        The grid-items component expects the categories as a property , the max number of
+        elements to be rendered and the rating limit which is a threshold that define the
+        dimension of the category item, in this case categories with rating more than 2.5 will
+        be of class "big-item"
+    -->
     <grid-items max="999" rating-limit="2.5" categories='vm.categories'></grid-items>
 </section>
