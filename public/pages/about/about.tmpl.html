@@ -15,7 +15,7 @@
         float:left;
     }
 
-    input, textarea, .contactbtn{
+    .contactinput, textarea, .contactbtn{
         padding:1em;
         width:100%;
         min-width: 325px;
@@ -100,7 +100,7 @@
             <br>
             <h2>Send a message</h2>
             <form>
-                <input type="email"  placeholder="Email" required><br><br>
+                <input class="contactinput" type="email"  placeholder="Email" required><br><br>
                 <textarea placeholder="Message" required></textarea><br><br>
                 <button class="contactbtn" onclick="alert('feature not available')">Send message</button>
             </form>
