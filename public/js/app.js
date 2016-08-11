@@ -32,7 +32,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     templateUrl: "/pages/about/about.tmpl.html",
                     controller: function(){
                         $(document).ready(function(){
-                            var myLatlng = new google.maps.LatLng(37.4419, -122.1419);
+                            var myLatlng = new google.maps.LatLng(51.5074 , 0.1278);
 
                             var mapOptions = {
                                 zoom: 4,

@@ -14,11 +14,42 @@
     .wrapper div{
         float:left;
     }
-    
+
+    input, textarea, button{
+        padding:1em;
+        width:100%;
+        min-width: 325px;
+    }
+
+    .col{
+        float:left;
+        width: 50%;
+    }
+
+    .wrap{
+        padding:1em;
+    }
+    .col h2{
+        padding:1em 0;
+    }
+
+    .contact-item{
+        float:left;
+        width:50%;
+        padding:1em 0
+    }
+
     @media (max-width:768px) {
+
+        .col{
+            float: none;
+            width:100%;
+        }
+
+
         .wrapper img{
             width:100%;
-            padding:none;
+            padding:0;
             padding-bottom:1em;
         }
     }
@@ -48,12 +79,32 @@
         </div>
     </div>
     <br>
-    <div class="subHeader">
-        <h2>Our shop</h2>
-    </div>
-    <div>
 
+    <div >
+        <div class="col"><div class="wrap">
+            <h2>Our shop</h2>
+            <div id="map_canvas"></div>
+        </div></div>
+        <div class="col"><div class="wrap">
+            <h2>Contact us</h2>
+            <div class="contact-item">
+                <strong>Telephone</strong><br>
+                <i class="fa fa-phone"></i> <a href="tel:+44 07000000000">+44 0700000000</a><br>
+            </div>
+            <div class="contact-item">
+                <strong>Fax</strong><br>
+                <i class="fa fa-fax"></i> +44 0200000000
+            </div>
+            <br>
+            <hr>
+            <br>
+            <h2>Send a message</h2>
+            <form>
+                <input type="email"  placeholder="Email" required><br><br>
+                <textarea placeholder="Message" required></textarea><br><br>
+                <button onclick="alert('feature not available')">Send message</button>
+            </form>
+        </div></div>
     </div>
-    <div id="map_canvas"></div>
 </section>
 
