@@ -26,6 +26,6 @@
     "gulp-sass": "^2.3.2",
     "gulp-uglify": "^1.5.4",
     "lodash": "^4.14.0",
-    "mongodb": "^2.2.4"
+    "mongodb": "^3.6.1"
   }
 }
