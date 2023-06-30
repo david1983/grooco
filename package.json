@@ -18,7 +18,7 @@
   "homepage": "https://github.com/david1983/grooco#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
-    "cheerio": "^0.20.0",
+    "cheerio": "^0.22.0",
     "express": "^4.14.0",
     "gulp": "^4.0.0",
     "gulp-clean-css": "^2.0.12",
