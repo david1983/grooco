@@ -18,13 +18,13 @@
   "homepage": "https://github.com/david1983/grooco#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
-    "cheerio": "^0.20.0",
+    "cheerio": "^0.22.0",
     "express": "^4.14.0",
     "gulp": "^4.0.0",
-    "gulp-clean-css": "^2.0.12",
+    "gulp-clean-css": "^3.9.1",
     "gulp-concat": "^2.6.0",
-    "gulp-sass": "^2.3.2",
-    "gulp-uglify": "^1.5.4",
+    "gulp-sass": "^5.0.0",
+    "gulp-uglify": "^2.0.0",
     "lodash": "^4.14.0",
     "mongodb": "^2.2.4"
   }
